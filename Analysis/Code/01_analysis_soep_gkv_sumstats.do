@@ -12,7 +12,6 @@
 	2) Number of insurer switches per year
 	3) Export summary statistics on insurer switches
 	4) Control variable summary stats
-
 */
 
 * 0) Preliminaries 

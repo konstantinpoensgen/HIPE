@@ -4,8 +4,6 @@
 
 /* 	OBJECTIVES
 	
-
-
 	OUTLINE
 	0) Preliminaries
 	1) Data	
