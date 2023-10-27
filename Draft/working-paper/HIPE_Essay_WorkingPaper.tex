@@ -1,0 +1,857 @@
+% Document settings
+\documentclass[a4paper, 11pt, english]{article}
+
+% Import layouting settings
+\input{../KP_Tex_Layout.tex}
+
+% Intext statistics
+\input{../../Analysis/Intext/221119_in_text_results.tex}
+
+\begin{document}
+	
+	
+	\vspace{2em}
+
+	\title{Price Sensitivity of Health Insurance Demand: \\ \vspace{-10pt} Evidence from Recent Reforms in Germany}
+	\author{\textbf{Konstantin Poensgen} \\ Working Paper}
+	\date{October 2023}
+	\maketitle
+	\thispagestyle{empty}
+
+\vspace{2em}
+\setstretch{1.4}
+
+\begin{center}
+	\textbf{Abstract}
+\end{center}
+
+\begin{addmargin}[1.5em]{1.5em}
+	\noindent Premiums are a key distinguishing feature in insurance markets with managed competition and a high degree of standardization. This study investigates price sensitivity of health insurance demand in a setting where premium differences are particularly salient. The analysis builds on two reforms in the German statutory health insurance system in 2009 and 2015 which equalized general premiums across all insurers but allowed for additional so-called add-on premiums.
+	%
+	The first part of the analysis is on the insurer-level. A difference-in-differences analysis establishes a credible link between premiums and demand, exploiting the fact that total premiums were the same for almost all insurers between 2009--2014. The study then uses administrative costs as an instrument for premiums during 2015--2018. Results suggest that the prior literature, which did not account for premium endogeneity, underestimates price elasticities. The estimated price elasticity of demand ranges from around 5 to 7. 
+	%
+	The second part of the analysis uses data from a representative survey of German individuals. Higher add-on premiums raise the individual switching probability substantially. Individuals with higher education are found to be more price sensitive. 
+	A comparison over time points to a greater individual price sensitivity when add-on premiums are expressed in absolute amounts and paid directly by the individual rather than when they are expressed as a percentage of earnings and deducted from payroll.
+\end{addmargin}
+
+\vspace{3em}
+
+%\newpage 
+%\tableofcontents
+
+\newpage
+\setcounter{page}{1}
+
+
+\setstretch{1.43}
+
+\section{Introduction}
+
+Markets for health insurance seek to promote insurer competition and offer choice to consumers. This is important for two primary reasons. First, insurer competition may foster cost-effectiveness amid rising health expenditures. In 2018, OECD countries spent 8.8\% of GDP on health---a figure projected to grow to 10.2\% of GDP by 2030 \citep{OECDhealth2019}. The Covid-19 pandemic likely accelerated this trend \citep{OECDhealthStats2022}. Second, offering choice allows for insurance plans to be tailored to individual preferences. This can increase welfare if individuals make active and well-informed decisions.
+
+The premise of competition in (health) insurance markets is that consumers respond to differences in plan attributes. A key distinguishing feature of insurance plans is their premium, the price paid for the insurance. Standard choice models predict that individuals prefer plans with more benefits at a lower premium. However, choice frictions documented in a growing literature on behavioral frictions in insurance markets complicate this simple relationship \citep[e.g.,][for reviews]{Ericson2017, Chandra2019}. For instance, consumers may lack sufficient understanding of health insurance products or face time and hassle costs \citep{Handel2015}. 
+
+This paper investigates how price sensitive health insurance demand is when premium differences are particularly salient across insurers. Research in other domains shows that price salience affects consumer demand \citep[e.g.,][]{chetty2009}. Concerning insurance, more salient premiums may help overcome choice frictions, such as the costs involved in gathering information about plan differences. This paper analyzes health insurance demand in the German statutory health insurance market, a context of highly standardized insurance plans and flexible switching rights. The analysis builds on two reforms in 2009 and 2015 that introduce variation in the salience of premiums. Starting in 2009, total premiums were split in two components: (i) a general premium common across insurers set by the federal government centrally and (ii) an additional so-called add-on premium chosen by insurers individually. Insurers had to charge such an additional premium when their revenue from general premiums (after risk- and income-adjustment) was insufficient to cover their total costs. Consequently, since 2009, premiums across insurers differed only in their prominent add-on premium.
+
+From 2009 until 2014, add-on premiums were charged as an income-independent absolute Euro amount and paid directly by the individual. Out of over 100 providers, 16 insurers charged such an absolute add-on premium. This led to significant declines in enrollment for some insurers. For example, the \textit{Deutsche Angestellten Krankenkasse}, one of the largest health insurance companies, saw net enrollment fall by over 460,000 individuals (7\%) when it charged an add-on premium of 8 Euros per month in 2010. The subsequent reform in 2015 adjusted how add-on premiums were expressed and levied; they were then expressed as a percentage of gross earnings and deducted from payroll directly. Again, there have been sizeable consumer responses. For instance, the \textit{BKK Euregio}, one of only two insurers charging an add-on premium of 0\% in 2015, experienced a demand increase of 65\% that year. 
+ 
+The primary focus of this study is on measures of price sensitivity during 2015--2018. The paper also presents estimates over 2009--2014 to explore how expressing and paying for the add-on premium affects price sensitivity. However, due to data limitations, the main difference-in-differences and instrumental variables specifications (described below) cannot be implemented for the 2009--2014 estimates.
+
+The analysis builds on a combination of comprehensive insurer and individual-level data. The insurer-level data includes enrollment data on the universe of active insurers between 2009--2018. This is complemented by information scraped online from insurers' balance sheets and ratings published by a German newspaper. The individual-level data is from a representative panel survey of German individuals. This data allows linking individual characteristics with insurer switches and premiums.
+
+The first set of insurer-level analyses compares demand across different premium levels in a difference-in-differences design. In particular, this analysis includes only insurers that did not charge an add-on premium between 2009--2014. Hence, their premiums were equal and entirely determined by the federal government over this period. Premium variation increased markedly with the 2015 reform. Based on their premium level, the analysis groups insurers into either the comparison, above-average or below-average group. Demand evolved in parallel across the three groups from 2009 to 2014. Starting in 2015, insurers which charged below-average add-on premiums experienced a stark increase in demand. In contrast, insurers which charged above-average rates faced a decline in demand. Robustness tests show that these patterns are unlikely to be driven by changes in insurer ratings.
+
+The second set of insurer-level analyses presents estimates of the price elasticity of demand. This analysis is based on an Instrumental Variables (IV) estimation, which uses insurers' administrative costs per capita as an instrument for premiums. This is motivated by the institutional setting that features a comprehensive risk- and income-adjustment scheme that transfers funds to insurers based on expected health costs and offsets socio-economic differences in membership composition. Thus, add-on premiums are determined largely by how efficiently insurers operate. In support of the IV exclusion restriction, the paper shows that administrative costs are unrelated to insurer ratings. The estimated price elasticity ranges from 5 to 7. OLS estimates are found to underestimate the true elasticity. The paper further presents IV estimates on the add-on premium semi-price elasticity of demand; a one standard deviation higher add-on premium (0.3 pp.) lowers demand by about 13\%.
+
+The individual-level findings show how higher add-on premiums raise the propensity to switch insurers. A one standard deviation higher add-on premium (0.3 pp.) is estimated to raise the probability of switching insurers by 3.3 percentage points. This is sizeable compared to the mean annual switching rate of 5.5\%. Comparing estimates from 2009-2014 to 2015-2018 suggests that individual price sensitivity was even larger when add-on premiums were expressed in absolute amounts and paid directly by the individual. Finally, individuals with a tertiary degree appear to be more price sensitive than individuals with less education. The analysis does not reveal statistically significant interactions of price sensitivity with gender, age or health status. 
+
+\textbf{Contribution and related literature.} 
+This paper makes two methodological advances in estimating health insurance price elasticities. First, it provides novel visual evidence of the impact of premiums on demand. Second, it documents the importance of accounting for endogenous premiums, suggesting that the prior literature underestimates demand elasticities. \citet{pendzialek2016differences} provide a review of the existing literature on price elasticities.\footnote{For mandatory health insurance, included studies are, among others, \citet{douven2007measuring, tamm2007elasticities,Schmitz2017}. Considered literature for optional health insurance includes, among others, \citet{cutler1998paying,royalty1999health, parente2004employee}. For complementary health insurance, studies include, among others, \citet{frakt2010beneficiary, starc2014insurer}. For duplicate and supplementary insurance, reviewed studies include, among others, \citet{finkelstein2002effect,costa2003demand}.} Estimated price elasticities for mandatory primary health insurance among 45 studies reviewed range from 0.5 in the Netherlands to 4.2 in Germany. In terms of socio-demographic characteristics, age and poorer health status are consistently found to lower price elasticities, but some studies also find effects for income, education and gender. However, the studies on mandatory primary health insurance reviewed in \citeauthor{pendzialek2016differences} do not account for endogenous premiums beyond using lagged premiums as an instrument for current premiums.\footnote{\citet{schut2002managed} discuss endogeneity of premiums and suggest that insurers' capital reserves per capita would be a suitable instrument. Though, they state that their ``data set is too small to get reliable IV-estimates''.}
+
+To my knowledge, the present study is the first to estimate price sensitivity in the German health insurance market following the 2015 reform. This constitutes a period of increased premium variation compared to prior analyses carried out in the German context.
+%
+In fact, several previous studies have analyzed the add-on premium reform in 2009. Consistent with the present analysis, they find that price sensitivity increased as premium differences have become more salient in 2009. Using aggregate data on insurer membership, \citet{Pendzialek2015} find that the price elasticity of demand increased from 0.8 to 3.5 in response to the reform. \citet{Schmitz2017} find similar numbers. They estimate that price elasticities increased from 1 to 4. Based on individual-level data, \citeauthor{Schmitz2017} also find that individuals were three times more likely to switch insurers when facing a monthly premium increase of 10 Euros after the reform. \citet{Wuppermann2014} focus on retired individuals, also finding that demand has become more price sensitive after the 2009 reform.
+
+Finally, the individual-level analysis of the present paper contributes to the literature on choice in health insurance markets. 
+%In particular, the individual level analysis sheds light on the type of choice frictions present. The results suggest that the salience of plan attributes such as premiums is important. The findings also point to the role of education in understanding health insurance decisions.
+As outlined in \citet{Spinnewijn2017}, this literature has moved from testing for adverse selection \citep{Chiappori1997, Chiappori2000, Cohen2010} and studying heterogeneity in risk preferences \citep{Cohen2007,Einav2010,Sydnor2010,Ericson2021} to investigating non-rational behavior and choice frictions (outlined in the following).  
+%Several theoretical models introduce distortions in individuals' perceived value of insurance compared to its true welfare-relevant value. For instance, \citet{Spinnewijn2017} develops a model of insurance choice where heterogeneous frictions such as inaccurate perceptions, inertia or bounded rationality distort individuals' willingness to pay for insurance. \cite{Handel2019} analyze welfare implications of policies that reduce frictions under those distortions.
+
+Growing evidence shows that observed (health) insurance choices deviate from frictionless expected utility maximization.  %\footnote{For additional reading on consumer frictions in health insurance markets, \citet{Ericson2017} and \citet{Chandra2019} provide further discussion.} 
+Recent studies attribute a significant role to information frictions such as insufficient understanding of insurance products \citep{Abaluck2011, Loewenstein2013, Handel2015, Bhargava2017}. This is consistent with the present study's finding that premium salience and payment modality matter for individuals' decision-making.
+%limited cognitive ability \citep{Fang2008}. 
+Additionally, individuals may misperceive their risks or place too much weight on small probabilities \citep{Barseghyan2013}. There may also be a role for liquidity constraints \citep{Cole2013, casaburi2018time}. Finally, choice quality may relate to socio-demographic characteristics. \citet{HKMS2020} find that individuals with higher education and income, and those with analytical backgrounds, make health insurance decisions that are more in line with their expected health costs. This is aligned with the present study's finding that individuals with higher education are more price sensitive.
+
+Regarding dynamic insurance choices, individuals are found to exhibit consumer inertia \citep[e.g.,][]{Handel2013}. This is consistent with the low switching propensities found in the German context. Several studies---especially on Medicare Part D in the US---document significant switching costs that help to explain this demand persistence \citep{nosal2012estimating, miller2012estimating, marzilli2014consumer, polyakova2016regulation}. Inattention may also contribute to inertia \citep{Kiss2014, heiss2016inattention, ho2017impact}. Despite generally low switching rates, some authors have found that switching is more likely when financial gains are more significant, and initial plan attributes worsen \citep{ketcham2012sinking, hoadley2013switch}. \citet{abaluck2016evolving}, however, find that little learning took place among Medicare Part D enrollees over time and that welfare losses from not choosing cost-effective plans have increased.
+
+
+The paper proceeds as follows. Section \ref{sec:InstitutionalSetting} outlines the institutional context. Section \ref{sec:data} describes the data and section \ref{sec:strategy} the empirical strategy. Section \ref{sec:empirics} presents empirical results. Section \ref{sec:limitations} discusses limitations before section \ref{sec:discussion} concludes.
+
+\section{Institutional Setting \label{sec:InstitutionalSetting}}
+
+This section begins by outlining the main characteristics of the German statutory health insurance system. It then describes the (add-on) premium-related elements of the reforms in 2009 and 2015. Appendix \ref{sec:InstitutionAppendix} outlines the remaining reform components.
+
+\subsection{The German Statutory Health Insurance System \label{subsec:GSHI}}
+
+The German health insurance system dates back to Bismarck's social reforms in 1883, which introduced health insurance for certain occupational groups. This system was successively opened to other parts of the population. Freedom of provider choice was introduced in 1997. A universal mandate became effective in 2009, but an earlier mandate had applied to almost all individuals before.
+
+\textit{Statutory versus private insurance.} The German health insurance system consists of two pillars: the so-called statutory and private systems. Generally, individuals enroll in the statutory arm, which accounts for 90\% of all insured individuals \citep{Schmitz2017}. Some groups, including the self-employed or employees above a certain earnings threshold, may opt into the private system instead. Insurance benefits are highly standardized across insurers in the statutory system and received on a needs basis. Given regulatory differences across the two pillars and types of individuals, this study focuses on full-time employees in the statutory system. 
+
+\textit{Types of statutory providers.} The statutory system comprises over 100 active health insurance companies. These are typically categorized into six provider types reflecting the mandatory assignment to insurers before 1997.\footnote{The six provider types are nationwide "substitute" providers (EK), general regional providers (AOK), company-provided insurance (BKK), guild-specific providers (IKK), agriculture-specific providers (LKK), and miners-specific providers (Kn).} Despite many insurers being open to the broader population, present-day membership composition across provider types still reflects their historic assignment \citep{kohlhammer2017}. Consequently, health risks differ substantially across provider types. This motivates a comprehensive risk- and income-adjustment scheme across insurers (Appendix \ref{sec:InstitutionAppendix} provides details).
+
+\textit{The market for statutory health insurance.} Health plans are very comparable across insurers. First, benefits are standardized and determined jointly by insurers and representatives of doctors, hospitals and patients. Differences in benefits only remain if they are considered non-essential (e.g., homeopathy). Second, general premiums---also called ``contribution rates''---are the same across insurers since 2009. However, insurers can levy an ``add-on premium'' on top. Consequently, providers compete primarily on add-on premiums, non-essential benefits, minor plan options, customer service, and supplementary insurance. Insurers are obliged to contract with any individual seeking enrollment.
+
+\subsection{Add-On Premium Reforms since 2009 \label{subsec:reforms}}
+
+A major reform became effective on January 1, 2009, introducing changes to (i) the structure and design of premiums, (ii) the risk- and income-adjustment scheme, and (iii) the mechanism for transferring funds to insurers (which will be referred to as the ``health fund''). A later reform in 2015 introduced changes to the design of add-on premiums.\footnote{The 2009 reform was titled German Statutory Health Insurance Competition Strengthening Law (in German ``GKV Wettbewerbsstärkungsgesetz''). The 2015 reform was labeled GSHI Financing Structure and Quality Development Law (in German ``GKV-Finanzstruktur- und Qualitaets-Weiterentwicklungsgesezt'').} Throughout, customers enjoyed a special switching right whenever their insurer announced premium changes.
+
+\textit{Premiums before 2009.} Before 2009, each insurer set insurer-level contribution rates. These were charged as a percentage of individuals' gross earnings. This amount was split evenly between the employer and employee (known as employer-employee-parity). For example, the \textit{Techniker Krankenkasse}, one of the largest providers, charged a contribution rate of 14.0\% in 2008.
+
+\textit{Premiums between 2009--2014.} The 2009 reform decomposed contributions into two elements:
+\begin{itemize}[noitemsep, topsep=0pt]
+	\item \underline{General premium:} As before, the general premium was expressed as a percentage of employees' gross earnings and deducted from payroll. However, insurers could no longer charge insurer-level rates. Instead, the federal government set its level to 14.9\% \textit{for all} providers. Employer-employee-parity was somewhat lifted.\footnote{The employee paid 7.9\% of their gross earnings whereas the employer paid the remaining 7\%.} 
+	\item \underline{Add-on premium:} On top, providers could levy an add-on premium in the form of a monthly income-independent Euro amount, uniform at the insurer level. It was paid directly by the individual, i.e., not deducted from payroll. While generally income-independent, its financial burden should not exceed 1\% of gross earnings. However, only add-on premiums above 8 Euros per month required individual earnings checks.
+\end{itemize}
+Insurers were also allowed to transfer income-independent rebates to their members. In 2011, the general premium was increased to 15.5\% for all insurers, and the 1\% earnings ceiling was removed.\footnote{The employee paid 8.2\% of their gross earnings whereas the employer paid the remaining 7.3\%.} 
+
+\textit{Premiums between 2015--2018}. A reform in 2015 attempted to stimulate premium variation since no provider had charged add-on premiums after 2012 anymore. First, the general premium was lowered to 14.6\%. Full employer-employee-parity was re-established. Second, instead of an income-independent \textbf{absolute} Euro amount like between 2009--2014, insurers could now charge an income-dependent add-on premium expressed as a \textbf{percentage} of members' gross earnings. Unlike before, this add-on premium was deducted from payroll directly. Comparisons of add-on premiums across insurers were published online each year to guide consumers. Third, insurers could no longer pay rebates.
+
+The following table displays the premium evolution for illustratory insurers.  Henceforth, ``absolute'' and ``percentage'' add-on premium refer to the 2009--2014 and 2015--2018 regime, respectively.
+\vspace{0.2em}
+\begin{table}[H]\centering
+	\caption*{Illustrative Evolution of Add-On Premiums between 2009--2018}
+	\label{tab:add-on_illustration}
+	\resizebox{\textwidth}{!}{\begin{tabular}{lcccccccccc}
+			\toprule
+			 & \textbf{2009} & \textbf{2010} & \textbf{2011} & \textbf{2012} & \textbf{2013} & \textbf{2014} & \textbf{2015} & \textbf{2016} & \textbf{2017} & \textbf{2018}  \\
+			\midrule \vspace{0.5em}
+			General premium & 14.9\% & 14.9\% & 15.5\% & 15.5\% & 15.5\% & 15.5\% & 14.6\% & 14.6\% & 14.6\% & 14.6\%  \\ 
+			\addlinespace 
+			\textit{Provider} & \multicolumn{6}{c}{\textit{Absolute Add-On Premiums}} & \multicolumn{4}{c}{\textit{Percentage Add-on Premiums}}  \\
+			\midrule 
+			Techniker Krankenkasse & 0\euro & 0\euro & 0\euro& 0\euro & 0\euro & 0\euro & 0.8\% & 1.0\% & 1.0\% & 0.9\%  \\ 
+			DAK-Gesundheit & 0\euro & 8\euro & 8\euro & 0\euro & 0\euro & 0\euro & 0.9\% & 1.5\% & 1.5\% & 1.5\%  \\ 
+			Metzinger BKK &  -72\euro & -72\euro & -72\euro & -72\euro & -120\euro & -120\euro & 0\% & 0\% & 0.3\% & 0\% \\
+			\bottomrule 
+	\end{tabular}}
+	\begin{minipage}{0.98\textwidth}
+		\footnotesize \vspace{0.2em}
+		\textit{Note:} The general contribution rate applies to all providers equally and is set by the federal government annually. Negative values for \textit{Metzinger BKK} represent rebates paid to enrollees during respective years. \textit{DAK-Gesundheit} was named \textit{Deutsche Angestellten Krankenkasse} before 2012. \% refers to percent of gross earnings. 
+	\end{minipage}
+\end{table}
+
+\section{Data \label{sec:data}}
+
+%The empirical analysis draws on a combination of comprehensive insurer-level data and individual-level data. The following outlines the insurer-level data before describing the individual-level data.
+
+\subsection{Insurer-Level Data \label{subsec:dataprovider}}
+
+\textit{Enrollment.} Annual enrollment on the universe of active insurers in the statutory system is taken from the dfg-Ranking \citep{dfg2021}. Information covers 138 insurers between 2010--2018. Enrollment refers to total enrollment on January 1 of the respective year.\footnote{Total enrollment includes paying customers as well non-paying individuals like spouses or children.} This is interpreted as the final demand of the preceeding year. Accordingly, the difference in enrollment on 01.01.$t+1$ to enrollment on 01.01.$t$ is interpreted as the net demand generated in year $t$.
+
+Differences in size are substantial across insurers. Table \ref{tab:gkvsumjoint}, Panel (a) shows that the largest provider (\textit{Techniker Krankenkasse} in 2018) had more than 10 million enrolled individuals. In constrast, the smallest provider counted only 1,500 individuals (\textit{BKK Grillo-Werke} in 2018). In 2018, the twenty largest insurers accounted for 85\% of total enrollment.  While some providers experienced large enrollment gains over time, others faced sizeable losses.%\footnote{The largest annual increase was 474,000 enrollees (\textit{Techniker Krankenkasse} in 2014), roughly mirrored by the biggest reduction of 460,300 enrollees (\textit{Deutsche Angestellten Krankenkasse} in 2010).}
+
+\textit{Members and expenditure.} Data scraped from insurers' annual financial statements provides information on paying members, revenues and expenditure. These statements are available on the federal electronic publication platform from 2013 onwards. As expected, paying membership figures are somewhat lower than total enrollment (Table \ref{tab:gkvsumjoint}, Panel (a)). Information on insurers' expenses include sub-categories such as administrative costs.
+
+\textit{Add-on premiums and rebates.} Absolute add-on premiums and rebates between 2009--2014 are taken from \citet{Pendzialek2015}. In total, 16 insurers charged an add-on premium ranging from 8 Euro to 15 Euro over 2010--2012. Only 8 of these providers can be matched to enrollment data since the remaining 8 have merged with other insurers or filed for insolvency.\footnote{This sample selection poses threats to identifying the true effect of charging an absolute add-on premium on demand. The direction of the selection---i.e. missing insurers who faced most pressure after charging add-on premiums---could suggest that the (likely) negative effect of higher premiums on demand is underestimated.} Among the matched insurers, only add-on premiums of 8 Euro per month were charged. After 2012, no provider levied an absolute add-on premium anymore. Between 2009--2014, 12 providers paid rebates ranging from 30 Euro to 120 Euro per month. For 2015--2018, percentage add-on premiums by insurer and month are from the association of statutory health insurance providers. Since premiums occasionally differ within a year, annual means by insurer are computed. The average add-on premium was 0.95\% with a standard deviation of 0.3 percentage points over 2015--2018 (Table \ref{tab:gkvsumjoint}, Panel (c)).
+
+\textit{Ratings.} Annual insurer ratings from the newspaper \textit{FOCUS Money} serve as a proxy for provider quality. Ratings are available for about 50 providers annually with varying coverage for smaller providers. No information is available for 2013 and 2015. Whenever possible, missing entries are imputed with the mean of ratings in the preceding and subsequent year. For consistency over time, ratings are expressed relative to the highest rating of that year.
+
+\subsection{Individual-Level Data \label{subsec:dataindividual}}
+
+The individual-level data is from the German Socio-Economic Panel \citep{soep2020}. The SOEP is a representative panel survey among German residents. After a general presentation of the data and sample, this section discusses the identification of individual insurer switches.
+
+\subsubsection*{Data and Sample Description \label{subsubsec:soep}}
+
+The SOEP includes around 30,000 individuals in 15,000 households annually. It features a wide array of socio-demographic topics, including several health insurance-related questions. In particular, the name of the respondent's health insurer by year is provided if their insurer is one of the 25 largest insurers. Information on smaller insurers is not provided due to confidentiality concerns.
+
+The sample of interest---full-time employed individuals with compulsory health insurance---includes \SampleSoepFullUnique{} individuals, or \SampleSoepFullObs{} person-year observations between 2015--2018 (Table \ref{tab:soepsummary}). Insurer-level data can be matched to \SampleSoepHIMatch{}\% of these person-year observations. Since data is not year-balanced for all participants, the timing of provider switches can only be determined for \SampleSoepInfoObs{} person-year observations. This final sample size includes \SampleSoepInfoUnique{} unique individuals.
+
+Table \ref{tab:soepsummary} shows that the individuals in the switching sample are very similar to the broader sample of interest. On average, the switching sample is marginally older with a mean age of \SoepSwitchingAgeMean{} compared to \SoepFullAgeMean{} in the general sample (median of \SoepSwitchingAgeMedian{} in both samples). Gross earnings, education, gender and marriage rates are almost identical across the two samples. Lastly, the samples are very similar in terms of self-reported health satisfaction and number of doctor visits.
+
+\subsubsection*{Identifying Provider Switches \label{subsubsec:identifyingswitches}}
+
+Insurer switches are observed when the provider name in year $t+1$ differs from the prior entry in year $t$.\footnote{When insurers change because of mergers, acquisitions or renaming, they are not classified as switches.} The following table provides an illustrative example.
+
+% Table: Identifying and Interpreting Insurer Switches
+\begin{table}[H]
+	\caption*{Identifying and Interpreting Insurer Switches}
+	\label{tab:IdentifyingSwitches}
+	\adjustbox{width=\textwidth}{
+		\begin{tabular}{lc c c c c c}
+			\toprule
+			\textbf{Individual} & \textbf{Year} & \textbf{Provider} &  \textbf{Add-On$_{DAK}$} &  \textbf{Add-On$_{TK}$} & \textbf{Rating$_{DAK}$} & \textbf{Rating$_{TK}$}\\ 
+			\midrule 
+			Individual X & 2015 & DAK-Gesundheit (DAK) & 0.9 & 0.8 & 87.7& 100\\  
+			Individual X & 2016 & Techniker Krankenkasse (TK)    & 1.5 &1.0  & 85.6& 100\\
+			Individual X & 2017 & Techniker Krankenkasse (TK) & 1.5 & 1.0 & 90.1 & 100 \\
+			\bottomrule
+	\end{tabular}}
+	\begin{minipage}{0.98\textwidth}
+		\footnotesize \vspace{0.2em}
+		\textit{Note:} Insurers are chosen for illustrative purposes. Displayed premiums are actual premiums. Ratings are relative to the highest-ranked insurer (\textit{TK}), multiplied by 100.
+	\end{minipage}
+\end{table}
+
+\vspace{-6pt}
+However, it is partly ambiguous as to which year an insurer switch should be attributed. In particular, two scenarios can be distinguished:
+\begin{itemize}[noitemsep, topsep=0pt]
+	\item \underline{Contemporaneous effect:} The switch is observed in the \textit{same year} as the determinants causing it. In the table above, the switch may have occurred in 2016 due to the price increase of \textit{DAK-Gesundheit} from 0.9\% to 1.5\%, while \textit{Techniker Krankenkasse} charged only 1.0\%. 
+	\item \underline{Forward effect:} The switch is observed in the \textit{next year} compared to its determinants. In the example, the respondent may have switched insurers because of the higher quality rating or slightly lower premium of \textit{Techniker Krankenkasse} in 2015. 
+\end{itemize}
+
+In what follows, the baseline results consider the contemporaneous effect. All findings are qualitatively robust to the forward effect interpretation (provided in the appendix). The following table lists the number of insurer switches observed in the sample since the first add-on premium reform in 2009.
+
+% Table: Number of Observations and HI Provider Switches
+\begin{table}[H]
+	\caption*{Number of Observations and Insurer Switches} \label{tab:individualswitches}
+	\begin{adjustbox}{width=\textwidth}
+		\input{../../Analysis/Tables/SummaryStats/Individual/221119_sum_soep_gkv_obs_switches.tex}
+	\end{adjustbox}
+	\begin{minipage}{\textwidth}
+		\vspace{3pt}
+		\small \textit{Notes:} \# Switches shows the number of switches per year; \% Switches the share in annual observations. N gives the total number of observations in the sample per year. The table shows the contemporaneous effect interpretation. The sample includes only individuals for which add-on premium information on the (lagged) provider is available.
+	\end{minipage}
+\end{table}
+
+
+\section{Empirical Strategy \label{sec:strategy}}
+The institutional context features highly standardized insurance benefits and a comprehensive risk- and income-adjustment scheme. This constitutes a compelling setting to isolate the role of premiums in health insurance demand. The study explores price sensitivity on the levels of insurers and individuals, respectively. Unless stated otherwise, the study period is 2015--2018.
+
+\subsection{Insurer-Level Identification Strategy \label{subsec:strategy_provider}}
+
+\subsubsection*{Difference-in-Differences} 
+
+The first set of insurer-level analysis attempts to provide visual evidence of the causal impacts of add-on premiums on demand. A difference-in-differences (DiD) event study design is conducted which exploits the fact that the majority of insurers did not levy an \textit{absolute} add-on premium between 2009--2014. In effect, those insurers all charged the same premium in the pre-2015 period. This premium was determined by the federal government centrally. Following the reform in 2015, however, \textit{percentage} add-on premiums varied widely across those insurers. 
+
+Insurers which charged an add-on premium at some point over 2009--2014 are excluded from this analysis. The remaining insurers are assigned to one of three groups based on their \textit{percentage} add-on premium level over 2015--2018. The comparison group includes insurers which consistently charged add-on premiums within one standard deviation of the market average. The below market group comprises insurers which charged rates below the market average. The above market group includes insurers which charged premiums above the market average. Group assignment is held constant over time. The relevant criteria is that the insurer would fall into this group for at least 3 out of 4 years. Insurers that cannot be assigned to one of these groups according to this rule are excluded.
+
+We then estimate the following dynamic difference-in-differences equation
+\begin{equation} \label{eq:did}
+\begin{split}
+	log(enrollment_{jt}) =  \ & \alpha_0 \ above_j + \beta_0 \ below_j + \sum_{t=2009}^{2018} \gamma_t Year_t  + \sum_{\substack{t=-4, \\ t \neq 0}}^{4} \alpha_t \ above_j \times Year_{2014+t}  \\ 
+	&  + \sum_{\substack{t=-4, \\ t \neq 0}}^{4} \beta_t \ below_j \times Year_{2014+t} + \theta \ log(enrollment_{j,2009}) + \nu_j + e_{jt},
+\end{split}
+\end{equation}
+where $above$ and $below$ are dummy variables that capture treatment group assignment. The $\alpha_t$ and $\beta_t$ coefficients capture the difference of the respective group to the control group in year $t$ after controlling for overall group differences ($\alpha_0$, $\beta_0$), provider type ($\nu_j$) and year effects ($\gamma_t$). We also control for initial enrollment to account for large ex-ante within-group differences in size. This also captures a possible stickiniess in demand over time, e.g. due to switching costs or other choice frictions. The coefficients of interest, $\{\alpha_t,\beta_t\}_{t>0}$, should thus be interpreted as measures of price sensitivity after accounting for this possible demand persistence.\footnote{The DiD analysis is almost identical (qualitatively and quantitatively) when including insurer fixed effects instead of provider type fixed effects and initial enrollment.} The year 2014 is taken as the baseline year.
+
+The key assumption is that the three groups would evolve in parallel absent differences in their add-on premium. If this is true, the comparison group serves as a counterfactual for the above and below market groups. While we do not observe the three groups under equal premiums in the post-reform period, we can compare how their demand evolved over 2009--2014 and test for a parallel trend in the pre-treatment period. Another key assumption is that no other demand-relevant factor changed differently across insurers in the post-reform period other than premiums. This is critical to attribute the observed post-reform trends to the underlying premium variation rather than other factors. In support of this assumption, we test how annual ratings evolve in the three groups over time.
+
+\subsubsection*{Price Elasticity of Demand}
+
+The second set of insurer-level analysis aims to estimate the price elasticity of health insurance demand. We assume that demand for insurer $j$ in year $t$ is given by the demand function $D_{jt} = A_{jt}P_{jt}^{-\sigma}$, where $A_{jt}$ is an insurer-year specific demand shifter and $P_{jt}$ is the premium charged by $j$ at time $t$. The price elasticity of demand is given by $\sigma$, which we view to be constant across $j$ and $t$. Taking the log of both sides, we have
+\begin{equation}\label{eq:logdemand}
+	d_{jt} = -\sigma p_{jt} + a_{jt},
+\end{equation}
+where $x$ denotes $log(X)$. Estimation of \eqref{eq:logdemand} with $a_{jt}$ as insurer-year fixed effect is not feasible due to limited degrees of freedom. However, we can model the demand shifter as a combination of fixed effects and insurer control variables. In particular, we model demand by
+\begin{equation}\label{eq:aggregate_premium}
+	log(enrollment_{jt}) = -\sigma \; log(premium_{jt}) + \gamma \; log(rating_{jt}) + \theta \; log(enrollment_{j,2009}) + \eta_t + \nu_j + e_{jt},
+\end{equation}
+where $premium$ is the sum of the general contribution rate and the add-on premium (both in percentage points). $rating$ is a proxy for insurer quality, subsuming various aspects of insurance provision. $enrollment_{2009}$ is the insurer's enrollment in 2009---the earliest date observable in the data---and captures size differences and demand persistence like in the DiD analysis. $\eta$ and $\nu$ present year and provider type fixed effects, respectively. Finally, $e$ is a residual term on the insurer-year level.
+
+Endogeneity concerns challenge the consistent estimation of $\sigma$. In a simple model of supply and demand, \textit{premium} is a function of \textit{enrollment} itself. This creates a simultaneity bias in the estimation of Equation \eqref{eq:aggregate_premium}. Moreover, while $\nu_j$ allows for unobserved, time-invariant heterogeneity across provider types, time-varying covariates excluded from Equation \eqref{eq:aggregate_premium} may introduce omitted variable bias.\footnote{Appendix \ref{app:additionalresults} shows estimates using insurer fixed effects instead of provider-type fixed effects, $ratings$ and $enrollment_{2009}$. This allows for omitted time-invariant factors on the insurer-level. $ratings$ are omitted from this specification to increase the sample size and years coverage, which is relatively small for estimating insurer fixed effects. The IV estimates are still estimated with less precision compared to using provider-type fixed effects instead.} 
+
+The analysis adopts an Instrumental Variables (IV) estimation to address these endogeneity issues. Specifically, (log) premiums are instrumented with insurers' (log) administrative costs per capita. The motivation is that add-on premiums are expected to be higher when insurers operate less efficiently and thus have higher administrative costs. This is supported by the risk- and income-adjustment scheme which compensates insurers for socio-economic differences in their membership composition. In fact, one of the key reasons for introducing the add-on premium system in 2009 was to incentivize insurers to operate more efficiently by lowering costs like their administrative expenditures.
+
+For the instrument to be valid, it needs to satisfy three conditions. First, it needs to explain sufficient variation in premiums (relevance condition). The first-stage results in Table \ref{tab:IVaggregatefirststage} show that this is the case: one standard deviation higher administrative costs per capita (28 euro) raise the add-on premium by half its standard deviation (0.15 pp.). Tests for weak instruments reject the null hypothesis of weak instruments.\footnote{The Cragg-Donalds and the Kleibergen-Paap Wald F-statistics are 79 and 46 respectively.} Second, the instrument must not affect enrollment through channels other than prices (exclusion restriction). Third, the instrument must be unrelated to other characteristics that relate to demand (independence condition). These former two conditions would be violated if administrative costs correlate with other demand-relevant attributes. Reassuringly, there seems to be no statistical relationship between administrative costs and insurer ratings (Column 3) or transfers received from the health fund (Column 4), which proxy the overall morbidity of an insurer's members. 
+
+% Since $\nu_j$ might absorb some effects of interest, I additionally present results including provider-type fixed effects only while controlling for initial enrollment in 2010.\footnote{As outlined in Section \ref{sec:InstitutionalSetting},  the six provider types are nationwide "substitute" providers (EK), general regional providers (AOK), company-provided insurance (BKK), guild-specific providers (IKK), agriculture-specific providers (LKK) and miners-specific providers (Kn).} Year fixed effects $\eta_t$ control for average premium levels. % XX check again logic of FWL 
+
+
+\subsubsection*{Add-on Premium Semi-Price Elasticity} 
+%In an ideal experiment, add-on premiums would be randomized across providers. Clearly, this is not the case in the current context. Nevertheless, the estimates presented so far rely on the exogeneity of add-on premiums. That is, add-on premiums should be independent of other demand-relevant factors conditional on the included covariates. However, omitted variable bias and simultaneity bias challenge identification. For example, providers may invest in improving their customer service or offer non-essential benefits that require a higher percentage add-on premium. If the proxy for $quality$ (ratings) captures this insufficiently, and these insurance attributes increase demand, then the $addon$ coefficient will be upward biased (that is, less negative).\footnote{Another source of bias could result from imperfect risk-adjustment transfers. If these payments do not match with (average) health costs, percentage add-on premiums may reflect differences in enrollees' risks. That is, if add-on premiums are higher for providers with more morbid enrollees, the add-on premium coefficient may be upward biased following prior research which has found that older and less healthy people  tend to be less price sensitive \citep{Pendzialek2015}.} Results suffer from simultaneity bias when providers charge lower add-on premiums when facing low demand, or charging higher prices when facing high demand---which seems likely given the forces of supply and demand.
+
+The final set of insurer-level analysis considers the fact that premium differences in the German context are only driven by the add-on premium since 2009. As discussed in Section \ref{subsec:reforms}, this add-on premium is expressed as a percentage of gross earnings since 2015. An interesting object to identify is the add-on premium \textit{semi}-price elasticity of demand. This parameter expresses the percentage change in demand for a one percentage \textit{point} increase in the add-on premium. Similar to Equation \eqref{eq:aggregate_premium}, we estimate this parameter using
+\begin{equation}\label{eq:aggregate_addon}
+	log(enrollment_{jt})  = -\beta\ addon_{jt}  + \gamma \ log(rating_{jt}) + \theta \; log(enrollment_{j,2009})  \ + \eta_t + \nu_j + e_{jt},
+\end{equation}
+where $addon_{jt}$ is the add-on premium expressed in percentage points. Similar to the first stage of \textit{log(premium)}, we use (non-transformed) administrative costs per capita as an instrument for $\textit{addon}$.
+
+\subsection{Individual-Level Identification Strategy \label{subsec:strategy_individual}}
+
+Differences in premiums are relatively salient in the German context as individuals are informed about them by letter. Such letters include a notice of their special switching rights. Still, relatively few individuals change their health insurer in a given year. Previous choices could remain optimal or frictions might prevent provider switches otherwise. Appendix \ref{subsec:theory} presents a brief theoretical framework which motivates insurer switches. This part of the analysis models individual switching propensities as a function of add-on premiums. We use a linear probability model given by
+\begin{equation}\label{eq:individual_addon}
+	Pr(switch = 1)_{ijt} = \alpha + \beta\ addon_{ijt} + \gamma^{\prime} \  individual_{it} +  \kappa^{\prime} \  provider_{ijt} + \eta_t + u_{ijt}
+\end{equation}	
+where $Pr(switch = 1)$ is the probability that individual $i$ switches away from insurer $j$ in year $t$. As before, $addon$ is the percentage add-on premium expressed in percentage points. Thus, $\beta$ expresses the percentage point change in the switching probability for a one percentage point higher add-on premium. An additional specification looks at the change of the add-on premium to the previous year ($\Delta \ addon_{j,t,t-1}$). $individual$ is a vector of individual characteristics and $provider$ captures insurer attributes such as their rating and provider-type. $\eta$ expresses year fixed effects. The term $u_{ijt}$ represents a residual term.
+
+Consistent estimation of $\beta$ requires that $addon_{ijt}$ is uncorrelated with $u_{ijt}$. This would be violated if there is some excluded individual characteristic in $u_{ijt}$ that is correlated with both $Pr(switch=1)_{ijt}$ and $addon_{ijt}$. For example, insurers might observe an inherently low switching propensity among their customers. These insurers may then raise their add-on premium without a significant decline in demand. This type of endogeneity would lead to an underestimation of a (possibly) negative effect of add-on premiums on switching propensities. 
+
+The analysis seeks to address these endogeneity concerns in two ways. First, the vector $individual$ includes a number of socio-economic characteristics which control for individual switching propensities independent of prices. These include age, gender, education, earnings and health status. Second, the same IV estimation is adopted as for the insurer-level analysis in an attempt to isolate the exogenous variation in the add-on premium.
+
+
+\section{Empirical Results \label{sec:empirics}}
+
+%The empirical analysis investigates price sensitivity over two reform periods: absolute add-on premiums  (2009-14) and percentage add-on premiums (2015-18). Section \ref{sec:aggregate_analysis} presents estimates on the provider-level, followed by an analysis of individual switching probabilities in Section \ref{sec:individual_analysis}.
+
+\subsection{Insurer-Level Analysis \label{sec:aggregate_analysis}}
+
+This section begins by showing visual evidence of how differences in add-on premiums impacted demand following the reform in 2015. It then continues by presenting estimates of the price elasticity of demand. Finally, the section shows estimates of the add-on premium semi-price elasticity.
+
+\subsubsection*{Difference-in-Differences} 
+
+Figure \ref{fig:provider2015did} compares demand across insurers with different post-reform premium levels based on Equation \eqref{eq:did}. As described in Section \ref{subsec:strategy_provider}, insurers are assigned to one of three groups depending on their premium level over 2015--2018 (comparison, below market, and above market). Since none of the included insurers charged an absolute add-on premium between 2009--2014, they all had the same premium in the pre-reform period. This general premium was set by the federal government centrally.
+%The analysis excludes providers that charged an absolute add-on premium between 2009--14. Hence, all providers in the sample levied the same premium during the pre-reform period. Insurers are split in three groups. The first group, the comparison group, includes insurers which consistently charged add-on premiums close to the market average. The second group includes those insurers which charged rates below the market consistently. Finally, the third group includes insurers which charged premiums above the average insurer. 
+
+Panels \subref{fig:provider2015did_demand} and \subref{fig:provider2015did_members} show that net enrollment and paying members evolved very similar in the three groups until 2014. As premiums began to differ with the reform in 2015, demand started to diverge simultaneously. In particular, insurers who charged premiums below the market rate experienced an increase in demand relative to the comparison group. In contrast, insurers with higher than average premiums faced a decline in demand. However, this effect is not statistically significant at the 5\% level. A similar pattern arises for changes in market shares as displayed in Panel \subref{fig:provider2015did_marketsharechange}, which increased significantly for providers with lower-than-average rates after 2014. However, this effect on the rate of change seems to have lasted only for the first two post-reform years.
+
+The parallel pre-trend in demand suggests that premium differences post-2014 were not driven by systematic differences in the evolution of prior demand. This parallel trend during a relatively long period of equal premiums supports the assumption that the comparison group may serve as a counterfactual for the above and below market groups in the post-reform period. The coinciding divergence of demand and premiums gives credibility to the interpretation that the underlying post-reform premium variation is driving the observed differences in demand.
+
+A crucial assumption behind a causal interpretation is that there are no other changes around the time of the reform that could equally explain the observed demand pattern. Panel \subref{fig:provider2015did_rating} attempts to support this claim by showing the evolution of insurer ratings in the above and below market group relative to the comparison group. There is no statistically significant difference in the annual ratings over 2009--2018. That said, a pre- and post-reform comparison warrants two qualifications of this statement. First, the DiD point estimate for the above average group points to a statistically significant increase in their ratings in the post-reform years. One explanation is that the higher premiums were charged to fund better services or non-essential plan benefits. To the extent that these attributes generate more demand, we would underestimate the negative effect of higher premiums on demand. Second, there also seems to be a (less pronounced and not statistically significant) increase in the ratings of the below market premium insurers. In this case, we would overestimate the positive effect of lower premiums on demand. However, the \textit{magnitude} and \textit{trend} of the demand increase since 2015 seem unlikely to be explained by the relatively small and non-trending increase in ratings for the below market group. Moreover, since average ratings have increased somewhat for both groups, they cannot explain the opposite movement in the demand for the above and below market group.
+
+For robustness, Figure \ref{fig:provider2015did_med} shows the same graphs using the annual median premium as reference point. Results are qualitatively similar, but there seems to be a (statistically non-significant) pre-trend among the below market insurers for $log(enrollment)$ and $ratings$. Still, it appears less plausible that this weak trend explains the large demand increase in this group in the post-reform period.
+
+%On another note, the reform may have raised consumer attention, reducing external validity for non-reform times. Though, the observed demand change occurred over a three-year window, thus limiting this concern.
+
+\subsubsection*{Price Elasticity of Demand}
+
+Table \ref{tab:IVaggregatesecondstage_premium} shows estimates of the price elasticity of demand. Estimates are shown for total enrollment (Columns 1--2) and paying members (Columns 3--4). Comparing OLS estimates with those obtained when instrumenting for endogenous premiums suggests that the former underestimate the true elasticity. This is consistent with an estimation bias when using OLS arising from insurers charging higher premiums when facing greater demand. 
+
+The IV point estimates suggest a price elasticity of about 6.9 for total enrollment (including co-insured individuals) and 5.2 for paying members. These estimates are larger than those obtained by \citet{Pendzialek2015} and \citet{Schmitz2017} for the German context over 2009--2014. However, these authors do not account for endogenous premiums. In fact, the OLS point estimates of 4.2 and 3.7 for total enrollment and paying members, respectively, are very similar to their findings.\footnote{\citet{Pendzialek2015} and \citet{Schmitz2017} find a price elasticity of 3.5 and 4, respectively.}
+
+Insurance quality---proxied by insurer ratings---is positively correlated with demand in all specifications. Yet, the magnitude of the point estimate is small and the coefficient is only statistically significant at the 5\% level in the OLS-enrollment specification (Column 1). The coefficient on initial enrollment, on the other hand, shows the stickiness of health insurance demand. That is, demand in 2009 is still an almost perfect predictor of demand over 2015--2018.
+
+Appendix Table \ref{tab:IVaggregatesecondstage_premium_provider} shows the same analysis including insurer fixed effects instead of provider-type fixed effects, initial enrollment and ratings. Insurer ratings are omitted to increase the sample size and years coverage in light of the additional parameters that need to be estimated. The OLS point estimate of the price elasticity decreases to 2.2 and 1.5 for enrollment and paying members, respectively. These estimates remain statistically significant at the 0.1\% level. On the other hand, the IV point estimates for $\sigma$ increase to 10.9 and 8.6. However, they are not estimated with enough statistical precision to allow a credible interpretation of this magnitude.\footnote{The 95\% confidence interval of $\hat{\sigma}$ for total enrollment ranges from -5 to 26, and from -7 to 24 for paying members.}
+
+\subsubsection*{Add-on Premium Semi-Price Elasticity}
+
+Table \ref{tab:IVaggregatesecondstage_addon} shows estimates of the add-on premium semi-price elasticity of demand. Again, results are shown for total enrollment (Columns 1--2) and paying members (Columns 3--4). Mirroring the relationship for the overall price elasticity, the OLS estimates seem to underestimate the true elasticity. The IV point estimates suggest that a one standard deviation higher add-on premium (0.3 pp.) lowers total enrollment by about 13\% and the number of paying members by about 10\%. The estimates for \textit{rating} and \textit{initial enrollment} are almost identical to the price elasticity estimates in Table \ref{tab:IVaggregatesecondstage_premium}.
+
+Adding insurer fixed effects again yields smaller OLS estimates of the semi-price elasticity (Table \ref{tab:IVaggregatesecondstage_addon_provider}). In particular, the OLS estimate for total enrollment with insurer fixed effects suggests that a 0.3 percentage points higher add-on premium reduces demand only by about 4\% compared to 8\% in the provider-type specification. Similar to the estimation of the price elasticity, $\sigma$, the IV estimates  for the semi-price elasticity, $\beta$, lack statistical precision when including insurer fixed effects.
+
+An interesting question is how the semi-price elasticity for the \textit{percentage} add-on premium (2015--2018) compares to the corresponding elasticity for the \textit{absolute} add-on premium (2009--2014). For this purpose, Appendix \ref{app:analysis2009} presents price sensitivity estimates over 2009--2014. Since administrative costs are only observed from 2013 onwards, those estimates are based on OLS only. The point estimate of the preferred specification in Table \ref{tab:Aggregate09baseline} with insurer fixed effects suggests that charging an absolute add-on premium of 8 Euros reduces demand by about 3\%. Such an absolute add-on premium corresponds to roughly 0.3\% of gross earnings for individuals with a mean or median income (Table \ref{tab:soepsummary}). Hence, the semi-price elasticity point estimates are of similar magnitude for the 2009--2014 and 2015--2018 periods. However, important caveats need to be emphasized. First, the estimate is not significantly different from 0 statistically in the 2009--2014 period. Second, these estimates are likely biased given endogenous premiums. These biases need not be proportional across the two periods. Third, the 2009--2014 sample could suffer from selection bias. That is, no data is available for those insurers which filed for insolvency after facing a large demand reduction in response to charging an absolute add-on premium over 2009--2014 (e.g., \textit{City BKK}).
+
+%\textbf{\textit{Ordinary Least Squares.}} Table \ref{tab:Aggregate15baseline_addon} shows results of estimating Equation \ref{eq:aggregate_addon} using ordinary least squares. Columns (1) to (4) display results including provider type fixed effects. Columns (5) to (7) include provider fixed effects instead. Columns (4) and (7) add insurer ratings as an additional covariate. For better comparison of the estimates, Columns (3) and (6) restrict the estimation sample to insurers with available ratings without including them in the control variables.
+
+%The results imply a negative relationship between percentage add-on premiums and enrollment. The provider type specifications suggest that a one percentage point higher add-on premiums leads to a 27\% to 40\% reduction in demand once size differences across insurers are accounted for. This effect size is smaller in the specification with provider fixed effects, which suggests a 14\%-17\% demand reduction. This translates into an elasticity of about 1.2.\footnote{At a general contribution rate of 14.6\% and employer-employee-parity, a 1\% add-on premium is equivalent to a 13.7\% increase in the employee contribution. The elasticity based on the coefficients ranges from $13.9/13.7 \approx 1.0$ to $17.0/13.7 \approx 1.2$} Ratings are positively associated with enrollment when controlling for provider-type and initial demand, but are not statistically negative once controlling for provider fixed effects.
+
+%Moreover, higher add-on premiums are negatively associated with \textit{changes} in enrollment or market share (Table \ref{tab:Aggregate15addlhs}). 
+
+%\textbf{\textit{Instrumental Variables.}} The previous results are likely to suffer from omitted variable bias and simultaneity bias. The following results use administrative costs per enrolled individual as an instrument for the add-on premium to address these concerns. The main motivation is that add-on premiums are expected to be higher when insurers operate less efficiently and have higher administrative costs. This is especially the case in the presence of a well-functioning risk- and income-adjustment scheme. As elaborated in the empirical strategy section, the instrument needs to be relevant and fulfil the exclusion restriction and independence condition (see Section XX).
+
+%The first stage results in Table \ref{tab:IVaggregatefirststage} show that the relevance condition is satisfied. One standard deviation higher admin costs (28 Euro) raise the add-on premium by half its standard deviation (0.15 percentage points) on average. Showing that the remaining two conditions are satisisfied is less obvious. \textcolor{red}{XX cite Cameron and Trivedi.} They would be violated if administrative costs affect or reflect demand-relevant attributes that are not captured by the included control variables. As shown in Table \ref{tab:IVaggregatefirststage}, reassuringly, there appears to be no statistical relationship between administrative costs and provider ratings. Conditional on year and provider-type fixed effects, the 95\% confidence interval suggests that one standard deviation higher admin costs per enrolled individuals affect ratings by no more than -0.17 to 0.05 standard deviations. Additionally, there is no statistically significant relationship between admin costs and amounts received out of the health fund, which proxies the overall morbidity of an insurer. 
+
+%The second-stage results are presented in Table \ref{tab:IVaggregatesecondstage_addon} for two dependent variables: enrollment and market share changes. Compared to the OLS estimates, the $addon$ coefficients become more negative once instrumented. This is consistent with an upward bias in prior specifications. The point estimate in Column (2) implies that a one percentage point higher add-on premium---which corresponds to XX standard deviations---reduces aggregate demand by 43\%, ceteris paribus. This point estimates implies an elasticity of 3.2.
+
+%Further analysis should be carried out on the instrument's validity concerning the exclusion restriction and independence condition. Nevertheless, I regard the IV estimates as a valuable extension to test the robustness of prior results.  
+
+\subsection{Individual-Level Analysis \label{sec:individual_analysis}}
+
+This analysis relates individual switching propensities to add-on premiums. The section presents average price sensitivity estimates first. It then tests for heterogeneity across individual characteristics. %This is done for a representative sample of German full-time employees (section \ref{subsec:dataindividual}). While the following estimates are based on linear probability models, they are robust to using a probit or logit model instead.
+
+\subsubsection*{Individual Switching Propensities}
+
+Table \ref{tab:individual15cont} shows estimates of the effect of add-on premiums on individual switching probabilities.\footnote{Table \ref{tab:individual15cont} and the results discussed here are based on the contemporaneous effect interpretation. Table \ref{tab:individual15forward} displays results for the forward effect interpretation. Results are the same qualitatively.} Columns (1) to (3) use add-on premium levels as the main explanatory variable. Columns (4) to (6) use year-to-year changes in the add-on premium. 
+
+The results paint a clear picture that higher add-on premiums raise the propensity to switch insurers. The IV estimation for the add-on premium in levels (Column 3) suggests that a one standard deviation higher add-on premium (0.3 pp.) raises the switching probability by about 3.3 percentage points. This is a large effect compared to the mean annual switching rate of 5\%. The OLS estimates for the change in add-on premiums point to a magnitude similar to those in levels, but the corresponding coefficient is estimated with less statistical precision in the IV approach.
+
+The estimated effect size over 2015--2018 is smaller than the most comparable estimate over the 2009--2014 period (Appendix \ref{app:analysis2009}). During this period, an absolute add-on premium of 8 Euros---which corresponds to roughly 0.3 percentage points for an individual with mean  or median income (Table \ref{tab:soepsummary})---raised the switching probability by about 6 percentage points. This points to lower individual switching propensities under the \textit{percentage} add-on premium regime (2015--2018) compared to the \textit{absolute} add-on premium period (2009--2014).\footnote{This relationship differs from the one found in the insurer-level analysis, where the semi-price elasticity $\beta$ is found to be similar over the two periods. A possible reconciliation is the difference in samples as the individual-level analysis covers fewer insurers. A future version of this working paper will include insurer-level estimates of the semi-price elasticity in the subsample that is covered in the individual analysis.}
+
+In terms of covariates, individual switching propensities appear to decline in age. None of the remaining coefficients are statistically significant at the 5\% level. At face value, the point estimates suggest that female insurees and those with a tertiary degree are less likely to switch insurers. The opposite holds for individuals who report to be healthier overall. Individuals enrolled with higher rated insurers seem less likely to change their provider.
+
+\subsubsection*{Heterogeneity Analysis}
+
+Table \ref{tab:individual15cont_het} tests for heterogeneity in individual price sensitivity by various socio-economic characteristics. The OLS estimates suggests that older individuals are less price sensitive than younger individuals, but this finding is not robust to instrumentation of the add-on premium. The IV estimates suggest that individuals with tertiary education degrees are more price sensitive. While the IV point estimates suggest that female individuals and those with higher earnings are more price sensitive, the corresponding coefficients are not statistically different from 0 at the 5\% level. There appears to be no statistical relationship between price sensitivity and self-reported health satisfaction.
+
+
+\section{Limitations \label{sec:limitations}}
+
+There are some limitations that apply to the empirical results presented in this paper. These limitations concern the internal and external validity of the results, both of which this section discusses. Internal validity captures the extent to which the study correctly identifies and estimates the parameters of interests (such as the price or semi-price elasticity of demand). The external validity refers to the generality of the results, i.e., how the paper's findings apply to other settings beyond the German statutory health insurance market.
+
+\subsubsection*{Internal Validity}
+
+\textit{Difference-in-differences.} The critical assumption of the DiD results is that the demand of the treatment groups (i.e., the above and below market average premium groups) would have evolved in parallel to the comparison group after 2014 if there was no difference in their premiums. Comparing the evolution of insurer ratings over time suggests a slight increase in ratings for the two treatment groups compared to the comparison group. While the magnitude and trend of the change in ratings seem unlikely to explain the demand divergence, they could still distort the DiD results. However, given the small and generally non-significant effect of ratings on aggregate demand (Table \ref{tab:IVaggregatesecondstage_premium}), these distortions are likely small.
+
+\textit{Price elasticities.} The price elasticity estimates rely on the validity of the instrument. As discussed in section \ref{sec:strategy}, the instrument must not be associated with a variable that correlates with demand other than (add-on) premiums. Table \ref{tab:IVaggregatefirststage} shows no statistical relationship between administrative costs and ratings or transfers from the health fund. The absence of a correlation between the instrument and these covariates supports the exclusion restriction and independence condition. Nevertheless, this is only suggestive, and the two requirements could still be violated. Unfortunately, testing these conditions in the data is not possible due to the nature of unobserved variables.
+
+Another shortcoming of the estimation is the limited precision of the IV estimates with insurer fixed effects. Fixed effects on the insurer level would allow for omitted, time-invariant heterogeneity across insurers. This should be considered as more robust than the specification with provider-type fixed effects. Extending the study period to more recent years in future work would increase the number of observations and year coverage for insurers, which could increase statistical power in the estimation.
+
+Finally, a concern of the IV estimation is the estimand identified by the TSLS estimator. If there is heterogeneity in the price elasticity across insurers, $\sigma_j$, TSLS may only identify a Local Average Treatment Effect (LATE). First, this differs from the object of interest, which in this case could be the Average Partial Effect, $\mathbb{E}[\sigma]$. Second, the requirements to identify the LATE may not be met since the estimation uses a continuous instrument and includes covariates \citep{blandhol2022tsls}.\footnote{Future version of this working paper will include a comparison with estimates obtained using the instrumental variable correlated random coefficient (IVCRC) model estimator developed by \citet{masten2016identification} which identifies the Average Partial Effect under a control function assumption.}
+
+\textit{Comparison with 2009--2014.} Administrative costs are only available starting in 2013. Thus, comparing price sensitivity under the absolute add-on premium (2009--2014) to the percentage add-on premium (2015--2018) in section \ref{sec:empirics} is based on OLS estimates. These estimates are likely biased given the endogeneity of (add-on) premiums. The comparison assumes that this bias is either proportionate or constant in both periods, so the bias does not overturn the order of the actual elasticities. However, this need not be the case necessarily. A future version of this working paper should either attempt to gather data on administrative costs prior to 2013 or use an alternative instrument which is available over the entire study period.
+
+\textit{Individual switching decisions.} A limitation of the individual switching propensity analysis is that insurer information is available only for individuals enrolled with relatively large insurers. While this covers most individuals in the statutory health insurance pillar, it omits individuals enrolled with smaller insurers. Table \ref{tab:soepsummary} shows that the sample of full-time employees is very similar in socio-economic characteristics to the one used in the analysis. However, the omitted individuals could still differ in their health insurance preferences, in which case our estimates suffer from selection bias. Thus, future versions of the analysis will seek to request more granular data from the SOEP provider, or obtain administrative data on individual's insurance enrollment.
+
+Another concern of the individual level analysis is the sample size. In particular, the heterogeneity analysis may fail to detect statistically significant relationships due to a lack of statistical power. Again, improved data access---especially in terms of sample size---could increase statistical power.
+
+\subsubsection*{External Validity}
+
+The German context is an ideal setting to isolate the role of premiums. Health benefits are highly standardized, insurers are compensated for risk differentials, and premium differences are salient. However, demand elasticities for health insurance are likely sensitive to the specific institutional context. For example, the German setting does not feature deductibles. Thus, the study does not apply to settings with a trade-off between premiums and deductibles. Since health insurance is mandated in Germany, the findings are also limited to responses on the intensive margin of health insurance demand.
+
+
+%\subsubsection*{Endogeneity Concerns} 
+
+%While the individual-level results appear plausible, similar endogeneity concerns as for the provider-level analysis arise. First, results could suffer from omitted variables bias, for example, due to a potentially positive relationship between individual risk and add-on premiums. If risk adjustment transfers imperfectly compensate for risk differences, providers need to charge higher premiums for, on average, less healthy enrollees. This relationship creates a downward bias of the $addon$ coefficient if higher risk types are less likely to switch providers and included variables control for risk insufficiently. On the upside, adding other individual control variables such as the number of doctor visits does not affect the estimation results.\footnote{In fact, none of the health related control variables entered significantly.} 
+
+%Second, reverse causality and simultaneity bias challenge identification. Add-on premiums may be endogenous to price sensitivity if providers learn about customer behavior. For instance, providers could charge a higher premium knowing their demand is less elastic, implying a downward bias for $addon$. Similar to the provider-level analysis, the IV estimation attempts to address these issues for the 2015-18 estimates. The effect size increases when using administrative expenditure as instrument for the respective $addon$ variable.
+
+\section{Conclusion \label{sec:discussion}}
+
+This paper studies the relationship between (add-on) premiums and demand for health insurance. The findings suggest that simple OLS estimates in the prior literature underestimate the true price elasticity of demand. While demand for health insurance is persistent over time, estimated price elasticities are sizeable when using administrative costs as an instrument for premiums. Comparing individual switching propensities under different policy regimes reveals that price sensitivity is greater when premium differences are more salient. On the other hand, the 2009--2014 period in Germany suggests that premium variation is much more muted when premium differences become too salient.
+
+The findings of this study have important implications for the design of health insurance markets. Overall, the results suggest that policies need to promote sufficient price salience while allowing insurers to charge varying premiums in practice. Having observed strong consumer reactions in prior years, no insurer charged an absolute add-on premium after 2012. Possibly, insurers perceived individuals to respond so sensitively to premium differences that they were too wary of setting higher prices than their competitors. The subsequent reform in 2015---which affected how premiums were expressed (\% of earnings) and charged (deducted from payroll)---was successful in its goal of raising premium variation. On the downside, the reform seems to have lowered individuals' price sensitivity. Previously, such add-on premiums were expressed in absolute amounts and paid directly by the individuals.
+
+Future research can provide insights on how to balance premium salience for consumers with insurers' ability to raise premiums. For example, a more recent reform in 2019 introduced employer-employee parity also for the add-on premium. Unless the full incidence of this statutory split falls on the employee, this incentivizes employers to nudge employees toward insurers with lower premiums. Studying the impact of this policy modification can help understand how such cost-sharing could help balance price sensitivity and premium variation. Research on demand factors such as supplemental insurance would also help to understand the relative importance of premiums versus other plan attributes. Finally, future research on the supply side of health insurance could help understand the market more holistically. One such example are the determinants of (add-on) premiums, which would also aid our insights into additional instruments, improving the estimation of price elasticities overall.
+
+%Despite notable premium differences and highly standardized benefits, however, consumer choices are persistent overall. Further, the more conservative estimates suggest demand is less elastic when add-on premiums are expressed as a percentage of gross earnings rather than as an absolute Euro amount. One possible explanation is that premium differences were less salient between 2015-18. First, only a few providers charged an absolute add-on premium between 2009 and 2014, making premium differences very pronounced. Second, while premium variation increased with the 2015 reform, premium differences have become more complex. For instance, expressing premiums in percent of gross earnings may be less explicit than in absolute Euro amounts. Lastly, percentage add-on premiums were deducted from payroll, whereas absolute add-on premiums were paid by enrollees directly. 
+
+%The internal validity of the results has been discussed throughout the paper. Clearly, the variation is far from randomizing add-on premiums across providers and individuals. Nevertheless, the difference-in-differences analysis on the provider level provides credible evidence that lower percentage add-on premiums raised demand for some providers. Other estimates may suffer from omitted variable bias and reverse causality. The included IV estimations attempt to address these concerns, but more work could support the case that the instrument satisfies the exclusion restriction and independence condition. Measurement error could pose an issue if enrollment imperfectly resembles demand, for example, since it includes non-paying co-insured individuals. Findings are robust to using  annual average paying members instead.
+
+%Given the German context, results appear most applicable for contexts with managed competition, mandatory primary health insurance and high product standardization. Estimated price elasticities are consistent with previous studies reviewed in \citet{pendzialek2016differences}.
+
+%Policy implications of the findings are mixed. Percentage add-on premiums have increased premium variation as was politically intended. On the other hand, price elasticities may have declined under the new regime, potentially due to lower salience. Results of this paper also showed that provider quality raises demand, a necessary condition for competition to improve plan attributes beyond lowering premiums. In sum, add-on premiums seem to be a suitable instrument to promote price awareness, but policymakers could consider modifications to promote premium salience of the percentage add-on premiums.
+
+%This could be supported by future research. For example, further work could explore if price elasticities between 2015-18 are, in fact, smaller because of lower salience. Related research could explore heterogeneity in individual switching probabilities, an analysis that was underpowered in the present study. Other research could study a more recent reform becoming effective in 2019 that introduced employer-employee parity also for the add-on premium. This creates financial incentives for employers to encourage switches to insurers with lower add-on premiums — a hypothesis to be tested empirically.
+
+% Bibliography
+\newpage
+\setstretch{1.2}
+\bibliography{HIPE_Bibiliography.bib}
+\bibliographystyle{apalike}
+\doublespacing
+
+% Figures
+\clearpage 
+\newpage
+\section*{Figures}
+
+% Figure 1: Difference-in-Differences Analyses by Premium Level on the Provider Level - (Reference: Average Add-On Premium)
+\begin{figure}[htpb]
+	\captionsetup{justification=centering}
+	\caption{Difference-in-Differences Analyses of Health Insurance Demand on the Insurer-Level \\ (Reference: Average Add-On Premium)}
+	\label{fig:provider2015did}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\caption{Enrollment}
+		\label{fig:provider2015did_demand}
+		\includegraphics[width=\textwidth]{../../Analysis/Figures/DiD/Provider/220831_DiD_Provider_avg_insured_lead_ln_V2.pdf}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\caption{Paying Members}
+		\label{fig:provider2015did_members}
+		\includegraphics[width=\textwidth]{../../Analysis/Figures/DiD/Provider/220831_DiD_Provider_avg_members_ln_V2.pdf}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\caption{Market Share Change}
+		\label{fig:provider2015did_marketsharechange}
+		\includegraphics[width=\textwidth]{../../Analysis/Figures/DiD/Provider/220831_DiD_Provider_avg_marketshare_change_V2.pdf}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\caption{Rating (Placebo Outcome)}
+		\label{fig:provider2015did_rating}
+		\includegraphics[width=\textwidth]{../../Analysis/Figures/DiD/Provider/220831_DiD_Provider_avg_rating_sd_V2.pdf}
+	\end{subfigure}
+	\begin{minipage}{\textwidth}
+		\footnotesize \vspace{0.2em}
+		\textit{Note:} Shows point estimates and their 95\% confidence intervals from dynamic difference-in-differences regressions following Equation \eqref{eq:did}. 
+		%
+		The main outcomes are net enrollment in Panel (A), annual average paying members in Panel (B), and the change in market share in Panel (C). Panel (D) serves as a placebo test using ratings as outcome variable.
+		%
+		All specifications control for provider type and initial enrollment. The difference in 2014 is normalized to 0 (the baseline year).
+		%
+		The comparison group includes insurers that charged premiums within  $\pm$ one standard deviation (0.3 pp.) of the respective annual market average in at least three out of four years over 2015--18. ``Below average'' providers charged less than 0.3 pp. of the average (``Above average'' more than 0.3 pp.). 
+		%
+		Data on paying members is only available from 2012 onwards.
+		%
+		Figure \ref{fig:provider2015did_med} shows the same using the median add-on premium as a reference premium to group providers.
+	\end{minipage}
+\end{figure}
+
+
+% Tables
+\clearpage 
+\newpage 
+\section*{Tables}
+
+% Table 1: Summary Statistics for Insurer-Level Data (2015--2018)
+\begin{table}[ht]
+	\caption{Summary Statistics of the Insurer-Level Data (2015--2018)}
+	\label{tab:gkvsumjoint}
+	\begin{adjustbox}{width=\textwidth}
+		\input{../../Analysis/Tables/SummaryStats/Aggregate/220908_sum_GKV_aggregate_joint.tex}
+	\end{adjustbox}
+	\begin{minipage}{\textwidth}
+		\small \vspace{0.2em}
+		\textit{Notes:} Shows summary statistics on the insurer level. $\Delta$ indicates changes with respect to the prior year. \textit{pc} refers to numbers expressed per enrolled individual. Ratings are expressed as \% of the highest rating in that year. Monetary variables are in Euro (non-deflated). SD is standard deviation, N is number of observations.
+	\end{minipage}
+\end{table}
+
+\vspace{3em}
+
+% Table 2: Summary Statistics for Individual-Level Data (2015--2018)
+\begin{table}[h!]
+	\caption{Summary Statistics of the Individual-Level Data (2015--2018)}
+	\label{tab:soepsummary}
+	%\begin{adjustbox}{width=\textwidth}
+		\input{../../Analysis/Tables/SummaryStats/Individual/220908_sum_soep_summarystats.tex}
+	%\end{adjustbox}
+	\begin{minipage}{\textwidth}
+		\vspace{3pt}
+		\small \textit{Notes:} Shows summary statistics on the individual level. \textit{Gross earnings} are per month and expressed in Euro (non-deflated). \textit{Female} and \textit{Married} show sample shares. Health satisfaction is on a scale from from 0 (low) to 10 (high). Doctor visits are the number of doctor visits per individual and year. All variables are taken from the SOEP. The sample of interest includes full-time employees. The sample with information on switches is the subset for which the specific health insurer is identified in the data for the current and previous year.
+	\end{minipage}
+\end{table}
+
+
+% Table 3: Instrumental Variables First Stage and Explorations (2015--2018)
+\begin{table}
+	\caption{Instrumental Variables Estimation First Stage and Explorations (2015--2018)}
+	\label{tab:IVaggregatefirststage}
+	\input{../../Analysis/Tables/RegressionOutput/Aggregate/IV/220914_Aggregate_IV_firststage.tex}
+	\begin{minipage}{\textwidth}
+		\vspace{3pt} 
+		\footnotesize \textit{Notes:} Shows regression results of the IV first-stage used for estimation of Equation \eqref{eq:aggregate_addon}; also shows explorative results on the IV exclusion restriction and independence condition.
+		%
+		Column (1) shows the first-stage estimates corresponding to the second-stage results in Table \ref{tab:IVaggregatesecondstage_premium} using the log of administrative costs per capita as instrument for the log of total premiums. Column (2) shows the first-stage results corresponding to Table \ref{tab:IVaggregatesecondstage_addon} using administrative costs per capita as instrument for the add-on premium expressed in percentage points. Columns (3) and (4) show exploratory tests for the exclusion restriction and independence condition. 
+		%
+		Rating is the provider's ranking relative to the highest ranked insurer. Health fund revenue per capita captures morbidity of an insurers members. 
+		%
+		Standard errors clustered at the insurer level in parantheses. * p < 0.05, ** p < 0.01, *** p < 0.001 
+	\end{minipage}	
+\end{table}
+
+% Table 4: Insurer-Level Price Elasticity (2015--2018)
+\begin{table}
+	\caption{Insurer-Level Price Elasticity (2015--2018)}
+	\label{tab:IVaggregatesecondstage_premium}
+	\input{../../Analysis/Tables/RegressionOutput/Aggregate/IV/220911_Aggregate_IV_secondstage_premium_ln.tex}
+	\begin{minipage}{\textwidth}
+		\vspace{3pt} 
+		\footnotesize \textit{Notes:} Shows regression results following Equation \eqref{eq:aggregate_addon} over 2015--18 using Ordinary Least Square (OLS) and Two-Stage Least Squares (TSLS). 
+		%
+		Premium (log) is the log of the sum of the general contribution rate and the add-on premium (both expressed in percentage points). 
+		%
+		In Columns (2) and (4), premium (log) is instrumented using the log of administrative costs per capita.
+		%
+		Dependent variables are the log of enrollment in Columns (1) and (2), and the log of paying members in Columns (3) and (4). 
+		%
+		Standard errors clustered at the insurer level in parantheses. * p<0.05, **  p<0.01 and *** p<0.001. 
+	\end{minipage}	
+\end{table}
+
+% Table 5: Insurer-Level Semi-Price Elasticity (2015--2018)
+\begin{table}
+	\caption{Insurer-Level Semi-Price Elasticity (2015--2018)}
+	\label{tab:IVaggregatesecondstage_addon}
+	\input{../../Analysis/Tables/RegressionOutput/Aggregate/IV/220911_Aggregate_IV_secondstage_addon.tex}
+	\begin{minipage}{\textwidth}
+		\vspace{3pt} 
+		\footnotesize \textit{Notes:} Shows regression results following Equation \eqref{eq:aggregate_addon} over 2015--18 using Ordinary Least Squares (OLS) and Two-Stage Least Squares (TSLS). 
+		%
+		In Columns (2) and (4), add-on (pp.) is instrumented using administrative costs per insured individual (expressed in Euro). 
+		%
+		Dependent variables are the log of enrollment in Columns (1) and (2), and the log of paying members in Columns (3) and (4).
+		%
+		Standard errors clustered at the insurer level in parantheses. * p<0.05, **  p<0.01 and *** p<0.001. 
+	\end{minipage}	
+\end{table}
+
+
+% Table 6: Individual-Level Switching Propensities (2015--2018)\\ (Contemporaneous Effect)
+\begin{table}[ht]
+	\captionsetup{justification=centering}
+	\caption{Individual-Level Switching Propensities (2015--2018) \\ (Contemporaneous Effect)}
+	\label{tab:individual15cont}
+	\begin{adjustbox}{width=\textwidth}
+		\input{../../Analysis/Tables/RegressionOutput/Individual/addon15/220926_Individual_LPM_addon15_contemporaneous.tex}
+	\end{adjustbox}
+	\begin{minipage}{\textwidth}
+		\vspace{3pt}
+		\footnotesize \textit{Notes:} Shows regression results from a linear probability model estimation following Equation \eqref{eq:individual_addon} over 2015-18. Columns (1)--(2) and (4)--(5) use Ordinary Least Squares (OLS); Columns (3) and (6) use Two-Stage Least Squares (TSLS) with administrative costs per insured individual as instrument for add-on. 
+		%
+		Add-on (pp.) is the percentage add-on premium expressed in percentage points. $\Delta$ Add-on (pp.) is the year-to-year difference of Add-on (pp.). Rating is relative to the highest rating in the respective year (in \%).
+		% 
+		Estimation considers the contemporaneous effect interpretation. Table \ref{tab:individual15forward} shows the corresponding results for the forward effect specification.
+		%
+		Standard errors clustered at the insurer level in parantheses. * p<0.05, **  p<0.01 and *** p<0.001. 
+	\end{minipage}
+\end{table}
+
+% Table 7: Heterogeneity in Individual-Level Switching Propensities (2015--2018) \\ (Contemporaneous Effect)
+\begin{table}
+	\captionsetup{justification=centering}
+	\caption{Heterogeneity in Individual-Level Switching Propensities (2015--2018) \\ (Contemporaneous Effect)}
+	\input{../../Analysis/Tables/RegressionOutput/Individual/addon15/220909_Individual_LPM_addon15_heterogeneity_contemporaneous_horizontal.tex}
+	\label{tab:individual15cont_het}
+	\begin{minipage}{\textwidth}
+		\vspace{3pt}
+		\footnotesize \textit{Notes:} Shows regression results of heterogeneity in switching probabilities by individual characteristics. 
+		%
+		Estimates are from a linear probability model following Equation \eqref{eq:individual_addon} with an additional interaction of \textit{Add-on (pp.)} and the respective characteristic. 
+		%
+		Panel (a) uses Ordinary Least Squares (OLS); Panel (b) uses Two-Stage Least Squares (TSLS). IV estimates include the add-on premium and the interaction term as endogenous variables. The instruments are administrative costs per insured individual and its interaction with the respective characteristic. 
+		%
+		The characteristic is indicated by the column header. Controls on the individual level include age, female, tertiary degree, the log of earnings and health satisfaction.  Controls on the insurer level include ratings. 
+		%
+		Estimation samples are identical in Panel (a) and Panel (b). 
+		%
+		Standard errors clustered at the insurer level in parantheses. * p<0.05, **  p<0.01 and *** p<0.001. 
+	\end{minipage}
+\end{table}
+	
+\clearpage 
+\newpage 
+\appendix
+%\counterwithin{figure}{section}
+%\counterwithin{table}{section}
+
+\section*{Appendices}
+
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand\thefigure{\thesection.\arabic{figure}}    
+\setcounter{figure}{0} 
+
+\renewcommand\thetable{\thesection.\arabic{table}}    
+\setcounter{table}{0} 
+
+\section{Appendix Figures and Tables \label{app:additionalresults}} 
+
+% Figure A.1: Difference-in-Differences Analyses by Premium Level on the Provider Level - (Reference: Median Add-On Premium)
+\begin{figure}[htpb]
+	\captionsetup{justification=centering}
+	\caption{Difference-in-Differences Analyses of Health Insurance Demand on the Insurer-Level \\ (Reference: Median Add-On Premium)}
+	\label{fig:provider2015did_med}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\caption{Enrollment}
+		\label{fig:provider2015did_demand_med}
+		\includegraphics[width=\textwidth]{../../Analysis/Figures/DiD/Provider/220831_DiD_Provider_med_insured_lead_ln_V2.pdf}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\caption{Paying Members}
+		\label{fig:provider2015did_enrollmentchange_med}
+		\includegraphics[width=\textwidth]{../../Analysis/Figures/DiD/Provider/220831_DiD_Provider_med_members_ln_V2.pdf}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\caption{Market Share Change}
+		\label{fig:provider2015did_marketsharechange_med}
+		\includegraphics[width=\textwidth]{../../Analysis/Figures/DiD/Provider/220831_DiD_Provider_med_marketshare_change_V2.pdf}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\caption{Rating (Placebo Outcome)}
+		\label{fig:provider2015did_rating_med}
+		\includegraphics[width=\textwidth]{../../Analysis/Figures/DiD/Provider/220831_DiD_Provider_med_rating_sd_V2.pdf}
+	\end{subfigure}
+	\begin{minipage}{\textwidth}
+		\footnotesize \vspace{0.2em}
+		\textit{Note:} Shows point estimates and their 95\% confidence intervals from dynamic difference-in-differences regressions following Equation \eqref{eq:did}. 
+		%
+		The main outcomes are net enrollment in Panel (A), annual average paying members in Panel (B), and the change in market share in Panel (C). Panel (D) serves as a placebo test using ratings as outcome variable.
+		%
+		All specifications control for provider type and initial enrollment. The difference in 2014 is normalized to 0 (the baseline year).
+		%
+		The comparison group includes insurers that charged premiums within  $\pm$ one standard deviation (0.3 pp.) of the respective annual median market premium in at least three out of four years over 2015--18. ``Below average'' providers charged less than 0.3 pp. of the median (``Above average'' more than 0.3 pp.). 
+		%
+		Data on paying members is only available from 2012 onwards.
+		%
+		Figure \ref{fig:provider2015did} shows the same using the average add-on premium as a reference premium to group providers.
+	\end{minipage}
+\end{figure}
+
+% Table A.1: Insurer-Level Price Elasticity (2015--2018) \\ (Instrumental Variables with Provider FE)
+\begin{table}
+	\caption{Insurer-Level Price Elasticity (2015--2018) \\ (Instrumental Variables with Provider FE)}
+	\label{tab:IVaggregatesecondstage_premium_provider}
+	\input{../../Analysis/Tables/RegressionOutput/Aggregate/IV/220914_Aggregate_IV_secondstage_premium_ln_providerFE.tex}
+	\begin{minipage}{\textwidth}
+		\vspace{3pt} 
+		\footnotesize \textit{Notes:} Shows regression results following Equation \eqref{eq:aggregate_addon} over 2015-18 using Ordinary Least Squares (OLS) and Two-Stage Least Squares (TSLS) with provider fixed effects. 
+		%
+		Premium (log) is the log of the sum of the general contribution rate and the add-on premium in percentage points. 
+		%
+		In Columns (2) and (4), premium (log) is instrumented using the log of administrative costs per capita.
+		%
+		Dependent variables are the log of enrollment in Columns (1) and (2), and the log of paying members in Columns (3) and (4). 
+		%
+		The specifications shown do not control for ratings or initial enrollment.
+		%
+		Standard errors clustered at the insurer level in parantheses. * p<0.05, **  p<0.01 and *** p<0.001. 
+	\end{minipage}	
+\end{table}
+
+% Table A.2: Insurer-Level Semi-Price Elasticity (2015--2018) \\ (Instrumental Variables with Provider FE)
+\begin{table}
+	\captionsetup{justification=centering}
+	\caption{Insurer-Level Semi-Price Elasticity (2015--2018) \\ (Instrumental Variables with Provider FE)}
+	\label{tab:IVaggregatesecondstage_addon_provider}
+	\input{../../Analysis/Tables/RegressionOutput/Aggregate/IV/220914_Aggregate_IV_secondstage_addon_providerFE.tex}
+	\begin{minipage}{\textwidth}
+		\vspace{3pt} 
+		\footnotesize \textit{Notes:} Shows regression results following Equation \eqref{eq:aggregate_addon} over 2015-18 using Ordinary Least Squares (OLS) and Two-Stage Least Squares (TSLS) with provider fixed effects.
+		%
+		In Columns (2) and (4), add-on (pp.) is instrumented using administrative costs per insured individual. 
+		%
+		Dependent variables are the log of enrollment in Columns (1) and (2), and the log of paying members in Columns (3) and (4).
+		%
+		The specifications shown do not control for ratings or initial enrollment.
+		%
+		Standard errors clustered at the insurer level in parantheses. * p<0.05, **  p<0.01 and *** p<0.001. 
+	\end{minipage}	
+\end{table}
+
+% Table A.3: Individual-Level Results for Percentage Add-On Premium (2015--18) \\ (Forward Effect)
+\begin{table}[ht]
+	\captionsetup{justification=centering}
+	\caption{Individual-Level Results for Percentage Add-On Premium (2015--2018) \\ (Forward Effect)}
+	\label{tab:individual15forward}
+	\begin{adjustbox}{width=\textwidth}
+		\input{../../Analysis/Tables/RegressionOutput/Individual/addon15/221115_Individual_LPM_addon15_forward.tex}
+	\end{adjustbox}
+	\begin{minipage}{\textwidth}
+		\vspace{3pt}
+		\footnotesize \textit{Notes:} Shows estimates from a linear probability model estimation following Equation \eqref{eq:individual_addon} over 2015-18. 
+		%
+		Columns (1)--(2) and (4)--(5) use Ordinary Least Squares (OLS). Columns (3) uses Two-Stage Least Squares (TSLS) with administrative costs per insured individual as instrument for add-on; Column (6) uses the change in the administrative costs per capita as instrument.
+		%
+		Add-on (pp.) is the percentage add-on premium expressed in percentage points. $\Delta$ Add-on (pp.) is the year-to-year difference of Add-on (pp.). Rating is relative to the highest rating in the respective year (in \%).
+		% 
+		Estimation considers the forward effect interpretation. Table \ref{tab:individual15cont} shows the corresponding results for the contemporaneous effect specification.
+		%
+		Standard errors clustered at the insurer level in parantheses. * p<0.05, **  p<0.01 and *** p<0.001. 
+	\end{minipage}
+\end{table}
+
+\clearpage
+\newpage
+\setcounter{figure}{0}
+\setcounter{table}{0} 
+\section{Theoretical Motivation of Individual Switching Propensity \label{subsec:theory}}
+
+The purpose of this appendix is to motivate the individual level analysis on the probability of switching health insurers. The brief discussion highlights that, in principle, health insurance demand may be modelled as a simple function of premiums, benefits and quality. In practice, however, default providers and behavioral frictions could play an important role in distorting provider choice. The following model borrows from \citet{Handel2015} but simplifies for illustrative purposes. 
+
+\textbf{Set-up.} Individuals face uncertainty over two discrete states: being healthy with known probability $\pi(x_i)$ or sick with probability $1-\pi(x_i)$ where $x_i$ describes individual characteristics. In both states, individuals have wealth $w_i$ but experience a wealth equivalent loss of $L$ when sick. Individuals differ in their degree of risk aversion $\gamma_i$ which determinants the curvature of the utility function.
+
+Health insurance is mandated and consumers choose a provider $j \in \Omega$  to maximize expected utility. Consumers' choice set is denoted by $\Omega$.  Each provider offers a plan  $\mathcal{J}_j=(p_j,b_j,q_j)$ comprised of premium $p_j$, benefits $b_j$ and quality $q_j$. Since benefits are highly standardized in the German context, we assume $b_j=\bar{b}$ for all $j$. To capture a price-value trade-off, quality $q_j(p_j)$ is a function of the price with $q'(p_j)>0$. That is, quality is increasing in the premium. Individuals pay premium $p_j$ in both states. Plan $\mathcal{J}_j$ yields the wealth equivalent of $\phi(\bar{b},q_j(p_j))$ when sick where $\phi(\cdot)$ is increasing in both its arguments.
+
+\textbf{Static provider choice.} Individual $i$ chooses plan $\mathcal{J}_j$ that maximizes their expected utility. Formally, expected utility is given by
+\begin{equation*}
+	U_{ij} = \pi(x_i) \times u\left(w_i - p_j, \gamma_i\right) + (1-\pi(x_i)) \times u\left(w_i - p_j - L + \phi(\bar{b},q_j(p_j)), \gamma_i \right)
+\end{equation*}
+where the Bernoulli utility function $u(y)$ is concave in $y$. Conditional on benefits $\bar{b}$ and quality $q_j$, expected utility is declining in premium $p_j$. Ceteris paribus, demand for plan $\mathcal{J}_j$ decreases in its price. Since quality is a function of the price, expected utility increases in $p_j$ only if the marginal quality benefit outweighs its marginal costs, formally,
+$$\underbrace{u_s'(\cdot) \frac{\partial \phi(\cdot)}{\partial q_j} q_j'(p_j)}_{\text{Marginal quality benefit}} \ > \ \underbrace{\frac{\pi(x_i)}{1-\pi(x_i)} u_h'(\cdot) + u_s'(\cdot)}_{\text{Marginal quality costs}}$$
+where $u_s$ and $u_h$ refer to utility in the sick and healthy state respectively. Everything else equal, the right hand side increases in $\pi(x_i)$, suggesting that, conditional on risk aversion, individuals with better health are expected to choose cheaper plans at the expense of lower quality. 
+
+Following \citet{Handel2015}, it is straightforward to introduce frictions into the model. For instance, individuals may misperceive their level of risk or specific provider attributes. In this case, individuals choose the plan that maximizes expected utility given perceived variables $\hat{\pi}(x_i)$, $\hat{p}_k$, $\hat{b}_j$, $\hat{q}_j$.
+
+\textbf{Dynamic provider choice.} In a dynamic setting, providers frequently update their plan offerings. In a frictionless environment, individuals constantly reoptimize choosing the plan that maximizes $U_{ij}$ at time $t$. Consequently, we would expect individuals to switch from their default provider $j$ to provider $k\neq j$ whenever $U_{ik} \geq U_{ij}$, for example, because of lower prices or higher quality of plan $k$. However, there may be several frictions affecting such switches. For instance, switching costs $c_i$ would drive a wedge between profitable switches such that $k$ is chosen only if $U_{ik} \geq U_{ij} + c_i$. Similarly, information about plan attributes may be skewed in favor of the default provider when their is uncertainty about $p_k$, $b_k$ and $q_k$. Of course, this relationship could also be biased in the opposite directions if consumers had bad experience with their previous provider $j$.
+
+\clearpage 
+\newpage 
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setstretch{1.43}
+\section{Institutional Setting \label{sec:InstitutionAppendix}}
+
+\subsubsection*{Morbidity-Oriented Structural Risk Adjustment}
+
+Given historic assignment of individuals to insurance providers based on occupation and status, and despite having opened up provider choice in 1997, differences in risks across providers' enrollees persist.  Aiming to create equal opportunities for competition across providers, a structural risk-adjustment mechanism has been in place since 1994. Until 2008, however, this mechanism was based on socio-demographic characteristics only which failed to capture differences in morbidity sufficiently. To address this shortcoming, risk-adjustment transfers were reformed towards a morbidity-oriented structural risk-adjustment scheme in 2009. The revised mechanism directly accounts for differences in morbidity based on the 80 most costly sicknesses \citep{kohlhammer2017}. Further, income differences across providers' members were fully compensated.
+
+The payments to providers are designed as transfers per insured individual that reflect their respective risk characteristics. Starting from a certain base amount, the transfer is adjusted upwards or downards as illustrated in Figure \ref{fig:MorbiRSA}. Thus, providers receive a payment per individual that aims to match their expected health costs regardless of the contribution paid. 
+
+% Figure A.1: Structural Risk Adjustment Mechanism since 2009
+\begin{figure}[htbp]
+	\centering
+	\caption{Structural Risk Adjustment Mechanism since 2009}
+	\label{fig:MorbiRSA}
+	\includegraphics[width=0.8\textwidth]{../../Other/Visualizations/MorbiRSA2009.pdf}
+	\begin{minipage}{0.8\textwidth}
+		\footnotesize \centering
+		\textit{Source:} Visualization adopted from \citet{kohlhammer2017}.
+	\end{minipage}
+\end{figure}
+
+\subsubsection*{Joint Health Fund}
+
+Prior to 2009, insurance contributions were transferred to providers directly. In 2009, a new mechanism was introduced, establishing a joint so-called "health fund" (\textit{Gesundheitsfonds}). The fund collects contributions from individuals through payroll and receives subsidies from the federal budget. Health insurance providers then receive payments per individual from the health fund after respective risk- and income-adjustment. Figure \ref{fig:health_fund2015} illustrates the basic transfer mechanism using the percentage add-on premium since 2015. 
+
+% Figure A.2: Health Fund (Percentage Add-On Version)
+\begin{figure}[H]
+	\centering
+	\caption{Health Fund (Percentage Add-On Version)}
+	\label{fig:health_fund2015}		
+	\includegraphics[width=0.8\textwidth]{../../Other/Visualizations/Gesundheitsfonds2015.pdf}
+	\begin{minipage}{0.8\textwidth}
+		\footnotesize \centering
+		\textit{Source:} Visualization adopted from \citet{kohlhammer2017}.
+	\end{minipage} 
+\end{figure}
+
+
+\clearpage 
+\newpage
+\section{Price Sensitivity Between 2009--2014 \label{app:analysis2009}} 
+\setcounter{figure}{0}
+\setcounter{table}{0}
+
+This section shows estimates of price sensitivity during the period of \textit{absolute} add-on premiums between 2009--2014. Estimation is challenged by data limitations. First, no enrollment data is available prior to 2009. Thus, a difference-in-differences design similar to Figure \ref{fig:provider2015did} is not possible. Second, administrative costs are only available from 2013 onwards. Hence, no IV estimation similar to Tables \ref{tab:IVaggregatesecondstage_premium} and \ref{tab:IVaggregatesecondstage_addon} can be conducted. Third, few insurers actually charged add-on premiums during this period and no data is available for insurers that filed for insolvency since. Thus, the premium variation is more limited and missing for some of the insurers which experienced the largest decline in demand. 
+
+In sum, the following results are based on OLS only and---given the relationship between the IV and OLS estimates over 2015--2018---should be considered as a lower bound of the true price sensitivity. Nevertheless, they provide a useful comparison to the results obtained in \citet{Pendzialek2015} and \citet{Schmitz2017}, who use a very similar OLS approach for this period.
+
+\subsubsection*{Absolute Add-on Premium on the Insurer-Level (2009--2014)}
+
+Estimation follows Equation \eqref{eq:aggregate_addon}, but replaces the percentage add-on premium with a dummy variable which equals 1 if provider $j$ charged a positive add-on premium in year $t$. Additionally, estimation includes a dummy variable, $rebate_{jt}$, that equals 1 if provider $j$ transferred rebates to its members.
+
+Table \ref{tab:Aggregate09baseline} presents estimation results. Columns (1)--(3) show results including provider fixed effects. These are omitted in Columns (3) to (5) which include provider-type fixed effects instead. Point estimates for the $addon$ dummy are negative across specifications other than Column (4). However, the coefficient is not statistically significant at the 5\% level. This could be because of the small number of insurer-year pairs ($N_{addon} = 14$) which actually charged absolute add-on premiums. That said, the p-value of the point estimate in Column (7) is 0.083. At face value, this point estimate suggests that charging an absolute add-on premium decreased demand by about 12\%. A back-of-the-envelope calculation implies a price elasticity of about 3.5 for individuals with mean income (3.2 at the median income).\footnote{At a general contribution rate of 15.5\% of gross earnings in 2011 and employer-employee-parity, a standard add-on premium of 8 Euro represents a 3.5\% contribution increase for an insuree with 2900 Euro monthly earnings. Thus, the $addon$ coefficient translates to a price elasticity of roughly $12.3/3.5 \approx 3.5$. The median income is 2750 Euro and the elasticity calculated accordingly.} This magnitude is similar to the elasticities estimated by \citet{Pendzialek2015} and \cite{Schmitz2017}. The coefficients for $rebate$ and $rating$ are not estimated with enough statistical precision. 
+
+\subsubsection*{Absolute Add-on Premium on the Individual-Level (2009--2014)}
+
+Estimation follows Equation \eqref{eq:individual_addon}, but again replaces the percentage add-on premium with a dummy variable which equals 1 if provider $j$ charged a positive add-on premium in year $t$. Among the 25 identifiable providers in the individual-level data, only add-on premiums of 8 Euro per month were levied (if they were charged). No rebates were paid.
+
+Table \ref{tab:individual09cont} presents estimation results from the contemporaneous effect interpretation. Table \ref{tab:individual09forward} shows the forward effect interpretation. Column (1) omits all control variables, Column (2) includes individual-level controls, and Column (3) restricts the estimation sample to individuals with available insurer-rating information. Column (4) adds ratings as a control variable. Finally, Column (5) adds provider-fixed effects.
+
+Across specifications, charging an absolute add-on premium is positively associated with switching probabilities, statistically significant at the 1\% level. Comparing the $addon$ coefficients in Columns (3) and (4) shows that the effect size of add-on premiums is over-estimated when omitting provider type and quality. Based on the preferred specification with provider fixed effects (Column 7), charging an add-on premium increases switching probabilities by about 6 percentage points. This magnitude is large compared to the mean switching probability of around 5\%. 
+
+% Table D.1: Insurer-Level Regression Results for Absolute Add-On Premium (2009--2014) \\ (Ordinary Least Squares)
+\begin{table}[ht]
+	\captionsetup{justification=centering}
+	\caption{Insurer-Level Regression Results for Absolute Add-On Premium (2009--2014) \\ (Ordinary Least Squares)}
+	\label{tab:Aggregate09baseline}
+	\input{../../Analysis/Tables/RegressionOutput/Aggregate/OLS09/220910_Aggregate_reg_0914_baseline.tex}
+	\begin{minipage}{\textwidth}
+		\vspace{3pt}
+		\small \textit{Notes:} Shows regression results following Equation \eqref{eq:aggregate_addon} over 2009--2014 using Ordinary Least Squares. 
+		%
+		Addon is a dummy that equals 1 if provider $j$ charged a positive absolute add-on premium in year $t$. Rebate is a dummy for paying rebates. Rating is relative to the highest rating in the respective year multiplied by 100. Initial Enrollment (log) is based on enrollment in 2009.
+		%
+		Standard errors clustered at the insurer level in parantheses. * p<0.05, **  p<0.01 and *** p<0.001. 
+	\end{minipage}
+\end{table}
+
+% Table D.2: Individual-Level LPM Regression Results for Absolute Add-On Premium (2009--14)
+\begin{table}[ht]
+	\captionsetup{justification=centering}
+	\caption{Individual-Level Results for Absolute Add-On Premium (2009--14) \\ (Contemporaneous Effect, Ordinary Least Squares)}
+	\label{tab:individual09cont}
+	\begin{adjustbox}{width=\textwidth}
+		\input{../../Analysis/Tables/RegressionOutput/Individual/addon09/220910_Individual_LPM_addon09_contemporaneous.tex}
+	\end{adjustbox}
+	\begin{minipage}{\textwidth}
+		\vspace{3pt}
+		\footnotesize \textit{Notes:}
+		Shows regression results from a linear probability model estimation following Equation \eqref{eq:individual_addon} over 2009--2014 using Ordinary Least Squares.
+		%
+		Add-on is a dummy that equals 1 if provider $j$ charged a positive absolute add-on premium in year $t$. Rebate is a dummy for paying rebates. Rating is relative to the highest rating in the respective year multiplied by 100. Initial Enrollment (log) is based on enrollment in 2009.
+		% 
+		Estimation considers the contemporaneous effect interpretation. Table \ref{tab:individual09forward} shows the corresponding results for the forward effect specification.
+		%
+		Standard errors clustered at the insurer level in parantheses. * p<0.05, **  p<0.01 and *** p<0.001. 
+	\end{minipage}
+\end{table}
+
+% Table D.3: Individual-Level Results for Absolute Add-On Premium (2009--14)
+\begin{table}[ht]
+	\captionsetup{justification=centering}
+	\caption{Individual-Level Results for Absolute Add-On Premium (2009--14) \\ (Forward Effect, Ordinary Least Squares)}
+	\label{tab:individual09forward}
+	\begin{adjustbox}{width=\textwidth}
+		\input{../../Analysis/Tables/RegressionOutput/Individual/addon09/220910_Individual_LPM_addon09_forward.tex}
+	\end{adjustbox}
+	\begin{minipage}{\textwidth}
+		\vspace{3pt}
+		\footnotesize \textit{Notes:} Shows regression reults from a linear probability model estimation following Equation \eqref{eq:individual_addon} over 2009--2014 using Ordinary Least Squares.
+		%
+		Add-on is a dummy that equals 1 if provider $j$ charged a positive absolute add-on premium in year $t$. Rebate is a dummy for paying rebates. Rating is relative to the highest rating in the respective year multiplied by 100. Initial Enrollment (log) is based on enrollment in 2009.
+		% 
+		Estimation considers the forward effect interpretation. Table \ref{tab:individual09cont} shows the corresponding results for the contemporaneous effect specification.
+		%
+		Standard errors clustered at the insurer level in parantheses. * p<0.05, **  p<0.01 and *** p<0.001. 
+	\end{minipage}
+\end{table}
+
+\end{document}
