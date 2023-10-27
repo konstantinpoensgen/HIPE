@@ -3,7 +3,7 @@
 ********************************************************************************
 	
 /*	Objectives:
-	- Joins the different data sets used from SOEP
+	- Joins the different data sets used from the SOEP
 	- Takes individual panel as starting point (pl) 
 	- Uses the cleaned temp data sets created in 01_HIPE_soep_raw_clean.do
 

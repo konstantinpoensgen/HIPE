@@ -6,7 +6,7 @@
 	- Explore the data with summary statistics
 	- Export sum stats for (i) insurer switches and (ii) covariates
 	
-	OUTLINE
+	OUTLINE:
 	0) Preliminaries
 	1) Data
 	2) Number of insurer switches per year
