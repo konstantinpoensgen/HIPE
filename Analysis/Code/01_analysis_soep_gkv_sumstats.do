@@ -2,7 +2,7 @@
 *************************** SOEP & GKV SUMMARY STATS ***************************
 ********************************************************************************
 
-/* 	OBJECTIVES 
+/* 	OBJECTIVES: 
 	- Explore the data with summary statistics
 	- Export sum stats for (i) insurer switches and (ii) covariates
 	
