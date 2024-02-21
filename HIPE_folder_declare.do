@@ -26,8 +26,9 @@ global date = "`date'"
 * Set user
 local username = c(username)
 di 	"`username'"
-local user "`username'/Dropbox"
-if "`username'" == "kpoens"  local user "C:/Users/`username'"
+if "`username'" == "kpoens"  					local user "C:/Users/`username'"
+else if "`username'" == "konstantinpoensgen" 	local user "/Users/konstantinpoensgen/Library/CloudStorage"
+else local user "`username'"
 
 * Project directory
 global hipe					"`user'/Dropbox/Research/HIPE"

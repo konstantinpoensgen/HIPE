@@ -160,7 +160,7 @@ foreach fe in t p {
 			ivreghdfe `lhs' (`rhs' = admin /*capital_reserves_pc*/) 	///
 				`controls' if year>2014 & year<2019 & sample_ols==1, 		///
 				absorb(`FE' year) cluster(provider) savefp(first_`fe'_`lhs'_`end_rhs') 			// XX KP (22-08-27): changed to clustered SE
-stop
+
 				* Store estimates
 				estimates store iv_`fe'_`lhs'_`rhs'
 				local N_iv_`lhs'  = trim("`: di %10.0fc e(N)'") 

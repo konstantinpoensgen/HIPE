@@ -21,7 +21,8 @@ clear all
 * Set user
 local username = c(username)
 di 	"`username'"
-if "`username'" == "kpoens"  local path "C:/Users/`username'/Dropbox/Research/HIPE"
+if "`username'" == "kpoens"  					local path "C:/Users/`username'/Dropbox/Research/HIPE"
+else if "`username'" == "konstantinpoensgen"	local path "/Users/konstantinpoensgen/Library/CloudStorage/Dropbox/Research/HIPE"
 
 * Run folder declare
 do "`path'/HIPE_folder_declare.do" 
